@@ -47,7 +47,9 @@ const Header = () => {
                 <div className = 'flex items-center justify-between'>
                     {/* LOGO */}
                     <div>
-                        <img src = {logo} alt = ''/>
+                        {/* <img src = {logo} alt = ''/> */}
+                        
+                        <h2>Ferretería Abrinal</h2>
                     </div>
 
                     {/* MENU */}
