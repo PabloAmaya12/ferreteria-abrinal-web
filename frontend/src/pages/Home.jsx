@@ -1,4 +1,7 @@
 import React from 'react';
+import heroImg01 from '../assets/images/hero.jpg';
+import heroImg02 from '../assets/images/hero_v2.jpg';
+import heroImg03 from '../assets/images/hero_v3.jpg';
 
 const Home = () => {
     return <>
@@ -22,18 +25,49 @@ const Home = () => {
 
                         <button className = 'btn'>Request an Appoinment</button>
                     </div>
-                </div>
-                {/* HERO COUNTER*/}
-                <div className = 'mt-[30px] lg:mt-[70px] flex flex-col lg_flex-row lg:items-center gap-5 lg:gap-[30px]'>
-                    <div>
-                        <h2 className = 'text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
-                            +30
-                        </h2>
 
-                        <span className = 'w-[100px] h-2 bg-yellowColor rounded-full block mt-[-14px]'></span>
+                    {/* HERO COUNTER*/}
+                    <div className = 'mt-[30px] lg:mt-[70px] flex flex-col lg_flex-row lg:items-center gap-5 lg:gap-[30px]'>
+                        <div>
+                            <h2 className = 'text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
+                                30+
+                            </h2>
+                            <span className = 'w-[100px] h-2 bg-yellowColor rounded-full block mt-[-14px]'></span>
+                            <p className = 'text__para'>Years of Experience</p>
+                        </div>
+                    </div>
+
+                    <div className = 'mt-[30px] lg:mt-[70px] flex flex-col lg_flex-row lg:items-center gap-5 lg:gap-[30px]'>
+                        <div>
+                            <h2 className = 'text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
+                                15+
+                            </h2>
+                            <span className = 'w-[100px] h-2 bg-purpleColor rounded-full block mt-[-14px]'></span>
+                            <p className = 'text__para'>Clinic Location</p>
+                        </div>
+                    </div>
+
+                    <div className = 'mt-[30px] lg:mt-[70px] flex flex-col lg_flex-row lg:items-center gap-5 lg:gap-[30px]'>
+                        <div>
+                            <h2 className = 'text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
+                                100%
+                            </h2>
+                            <span className = 'w-[100px] h-2 bg-irisColor rounded-full block mt-[-14px]'></span>
+                            <p className = 'text__para'>Patient Satisfaction</p>
+                        </div>
                     </div>
                 </div>
 
+                {/* HERO CONTENT */}
+                <div className = 'flex gap-[30px] justify-end'>
+                    <div>
+                        <img src = {heroImg01} alt = '' className = 'w-full' />
+                    </div>
+                    <div className = 'mt-[30px]'>
+                        <img src = {heroImg02} alt = '' className = 'w-full mb-[30px]' />
+                        <img src = {heroImg03} alt = '' className = 'w-full' />
+                    </div>
+                </div>
             </div>
         </div>
     </section>
