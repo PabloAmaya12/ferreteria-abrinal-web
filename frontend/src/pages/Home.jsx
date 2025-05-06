@@ -17,33 +17,32 @@ const Home = () => {
                         Tu ferretería de confianza.
                         </h1>
 
-                        <p className = 'text__para'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore 
-                            magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute 
-                            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-                            proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        <p className = 'text__para'>En Ferretería Abrinal, nos dedicamos a ofrecer herramientas y marcas de la más alta calidad a nuestros clientes. 
+                            Nos esforzamos constantemente por marcar la diferencia en la industria de herramientas y más allá. 
+                            Nuestro equipo está comprometido con la excelencia, la innovación y un servicio excepcional.
                         </p>
 
-                        <button className = 'btn'>Request an Appoinment</button>
+                        <button className = 'btn'>Conocer Más</button>
                     </div>
 
                     {/* HERO COUNTER*/}
                     <div className = 'mt-[30px] lg:mt-[70px] flex flex-col lg_flex-row lg:items-center gap-5 lg:gap-[30px]'>
                         <div>
                             <h2 className = 'text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
-                                30+
+                                + 10
                             </h2>
                             <span className = 'w-[100px] h-2 bg-yellowColor rounded-full block mt-[-14px]'></span>
-                            <p className = 'text__para'>Years of Experience</p>
+                            <p className = 'text__para'>Años de Experiencia</p>
                         </div>
                     </div>
 
                     <div className = 'mt-[30px] lg:mt-[70px] flex flex-col lg_flex-row lg:items-center gap-5 lg:gap-[30px]'>
                         <div>
                             <h2 className = 'text-[36px] leading-[56px] lg:text-[44px] lg:leading-[54px] font-[700] text-headingColor'>
-                                15+
+                                + 80
                             </h2>
                             <span className = 'w-[100px] h-2 bg-purpleColor rounded-full block mt-[-14px]'></span>
-                            <p className = 'text__para'>Clinic Location</p>
+                            <p className = 'text__para'>Marcas en Nuestro Catálogo</p>
                         </div>
                     </div>
 
@@ -53,7 +52,7 @@ const Home = () => {
                                 100%
                             </h2>
                             <span className = 'w-[100px] h-2 bg-irisColor rounded-full block mt-[-14px]'></span>
-                            <p className = 'text__para'>Patient Satisfaction</p>
+                            <p className = 'text__para'>Satisfacción del Cliente</p>
                         </div>
                     </div>
                 </div>
