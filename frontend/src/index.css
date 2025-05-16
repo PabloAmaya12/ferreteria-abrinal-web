@@ -24,6 +24,10 @@
     .text__para {
         @apply text-[18px] leading-[30px] font-[400] text-textColor mt-[18px]
     }
+
+    .hero__section {
+        @apply bg-[url('./assets/images/hero.jpg')] bg-no-repeat bg-center bg-cover;
+    }
 }
 
 @media onyl screen and (max-width:1024px) {
