@@ -1,7 +1,10 @@
 import { useEffect, useRef} from 'react';
-import logo from '../../assets/images/logo.png'
 import { Link, NavLink } from 'react-router-dom';
 import { BiMenu } from 'react-icons/bi';
+
+
+import logo from '../../assets/images/logo.png'
+import './Header.css'
 
 const navLinks = [
     {
@@ -19,7 +22,6 @@ const navLinks = [
 ]
 
 const Header = () => {
-
     const headerRef = useRef(null);
     const menuRef = useRef(null);
 
@@ -42,11 +44,11 @@ const Header = () => {
     const toggleMenu = () => menuRef.current.classList.toggle('show__menu');
 
     return (
-        <header className = 'header flex items-center' ref = {headerRef}>
+        <header className = 'header' ref = {headerRef}>
             <div className = 'container'>
-                <div className = 'flex items-center justify-between'>
+                <div className = 'header__content'>
                     {/* LOGO */}
-                    <div>
+                    <div className = 'logo'>
                         {/* <img src = {logo} alt = ''/> */}
                         
                         <h2>Ferretería Abrinal</h2>
@@ -54,13 +56,10 @@ const Header = () => {
 
                     {/* MENU */}
                     <div className = 'navigation' ref = {menuRef} onClick = {toggleMenu}>
-                        <ul className = 'menu flex items-center gap-[2.7rem]'>
+                        <ul className = 'menu'>
                             {navLinks.map((link, index) => (
                                 <li key = {index}>
-                                    <NavLink to = {link.path} className = {navClass =>
-                                    navClass.isActive
-                                    ? 'text-primaryColor text-[16px] leading-7 font-[600]'
-                                    : 'text-textColor text-[16px] leading-7 font-[500] hover:text-primaryColor'}>
+                                    <NavLink to = {link.path} className = {({ isActive }) => (isActive ? 'active' : '')}>
                                         {link.display}
                                     </NavLink>
                                 </li>
@@ -69,12 +68,11 @@ const Header = () => {
                     </div>
 
                     {/* NAV RIGHT */}
-                    <div className = 'flex items-center gap-4'>
-                        <span className = 'md:hidden' onClick = {toggleMenu}>
-                            <BiMenu className = 'w-6 h-6 cursor-pointer' />
+                    <div className = 'nav__right'>
+                        <span className = 'menu__icon' onClick = {toggleMenu}>
+                            <BiMenu />
                         </span>
                     </div>
-
                 </div>
             </div>
         </header>

@@ -1,24 +1,25 @@
-import React from 'react';
 import { RiLinkedinFill } from 'react-icons/ri';
 import { AiFillGithub, AiFillFacebook, AiOutlineInstagram } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 
+import './Footer.css';
+
 const socialLinks = [
     {
         path: 'https://www.facebook.com/ferreteriaaldaba',
-        icon: <AiFillFacebook className = 'group-hover:text-white w-4 h-5' />,
+        icon: <AiFillFacebook className = 'social-icon' />,
     },
     {
         path: 'https://www.instagram.com/abrinalferreteria/',
-        icon: <AiOutlineInstagram className = 'group-hover:text-white w-4 h-5' />,
+        icon: <AiOutlineInstagram className = 'social-icon' />,
     },
     {
         path: 'https://github.com/PabloAmaya12',
-        icon: <AiFillGithub className = 'group-hover:text-white w-4 h-5' />,
+        icon: <AiFillGithub className = 'social-icon' />,
     },
     {
         path: 'https://www.linkedin.com/in/pablo-iv%C3%A1n-amaya-aldaba-351532336/',
-        icon: <RiLinkedinFill className = 'group-hover:text-white w-4 h-5' />,
+        icon: <RiLinkedinFill className = 'social-icon' />,
     },
 ];
 
@@ -26,20 +27,17 @@ const Footer = () => {
     const year = new Date().getFullYear();
 
     return (
-        <footer className = 'pb-16 pt-10'>
+        <footer className = 'footer'>
             <div className = 'container'>
-                <div className = 'flex justify-between flex-col md:flex-row flex-wrap gap-[30px]'>
+                <div className = 'footer__content'>
                     <div>
-                        <p className = 'text-[16px] leading-7 font-[400] text-textColor mt-4'>
+                        <p className = 'footer__text'>
                             CopyRight © {year} developed by Pablo Amaya all right reserved.
                         </p>
-                        <div className = 'flex items-center gap-3 mt-4'>
+
+                        <div className = 'social__links'>
                             {socialLinks.map((link, index) => (
-                                <Link
-                                    to = {link.path}
-                                    key = {index}
-                                    className = 'w-9 h-9 border border-solid border-[#181A1E] rounded-full flex items-center justify-center group hover:bg-primaryColor hover:border-none'
-                                >
+                                <Link to = {link.path} key = {index} className = 'social__link'>
                                     {link.icon}
                                 </Link>
                             ))}
