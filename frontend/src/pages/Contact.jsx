@@ -1,26 +1,8 @@
-import { use, useState } from 'react';
-import { AiOutlinePhone, AiOutlineMail, AiOutlineEnvironment, AiOutlineFacebook, AiOutlineInstagram } from 'react-icons/ai';
+import { AiOutlinePhone, AiOutlineMail, AiOutlineEnvironment, AiOutlineCalendar, AiOutlineFacebook, AiOutlineInstagram } from 'react-icons/ai';
+
+import './Contact.css';
 
 const Contact = () => {
-    const [formData, setFormData] = useState({
-        firstName: '',
-        lastName: '',
-        email: '',
-        message: '',
-    });
-    
-    const handleSubmit = (e) => {
-        e.preventDefault()
-        // Handle form submission
-        console.log('Form submitted: ', formData)
-    }
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value,
-        })
-    }
 
     return (
         <div className = 'contact-page'>
@@ -68,6 +50,20 @@ const Contact = () => {
                                     </div>
 
                                     <div className = 'contact-item'>
+                                        <h3 className = 'contact-item-title'>Horarios</h3>
+
+                                        <div className = 'contact-item-content'>
+                                            <AiOutlineCalendar className = 'contact-icon' />
+                                            
+                                            <div>
+                                                <p className = 'contact-text'>Lunes - Viernes. 9 AM - 4 PM.</p>
+                                                <p className = 'contact-text'>Sábado. 9 AM - 4 PM.</p>
+                                                <p className = 'contact-text'>Domingo. Cerrado.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className = 'contact-item'>
                                         <h3 className = 'contact-item-title'>Redes Sociales</h3>
 
                                         <div className = 'contact-social'>
@@ -81,6 +77,11 @@ const Contact = () => {
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            {/* CONTACT FORM */}
+                            <div className = 'contact-form-container'>
+                                <h2 className = 'form-title'>Ubicación</h2>
 
                                 {/* MAP */}
                                 <div className = 'contact-map'>
@@ -89,72 +90,6 @@ const Contact = () => {
                                         className = 'map-iframe' loading = 'lazy'
                                     ></iframe>
                                 </div>
-                            </div>
-
-                            {/* CONTACT FORM */}
-                            <div className = 'contact-form-container'>
-                                <h2 className = 'form-title'>Send Us a Message:)</h2>
-
-                                <form onSubmit = {handleSubmit} className = 'contact-form'>
-                                    <div className = 'form-row'>
-                                        <div className = 'form-group'>
-                                            <label htmlFor = 'firstName' className = 'form-label'>First Name</label>
-
-                                            <input
-                                                type = 'text'
-                                                id = 'firstName'
-                                                name = 'firstName'
-                                                value = {formData.firstName}
-                                                onChange = {handleChange}
-                                                className = 'form-input'
-                                                placeholder = 'Ferretería'
-                                            />
-                                        </div>
-
-                                        <div className = 'form-group'>
-                                            <label htmlFor = 'lastName' className = 'form-label'>Last Name</label>
-
-                                            <input
-                                                type = 'text'
-                                                id = 'lastName'
-                                                name = 'lastName'
-                                                value = {formData.lastName}
-                                                onChange = {handleChange}
-                                                className = 'form-input'
-                                                placeholder = 'Abrinal'
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className = 'form-group'>
-                                            <label htmlFor = 'email' className = 'form-label'>E-mail</label>
-
-                                            <input
-                                                type = 'email'
-                                                id = 'email'
-                                                name = 'email'
-                                                value = {formData.email}
-                                                onChange = {handleChange}
-                                                className = 'form-input'
-                                                placeholder = 'contact@toolmaster.com'
-                                            />
-                                        </div>
-
-                                        <div className = 'form-group'>
-                                            <label htmlFor = 'message' className = 'form-label'>Your Message</label>
-
-                                            <textarea
-                                                id = 'message'
-                                                name = 'message'
-                                                value = {formData.message}
-                                                onChange = {handleChange}
-                                                className = 'form-textarea'
-                                                placeholder = 'Escribe tu mensaje'
-                                            ></textarea>
-                                        </div>
-
-                                        <button type = 'submit' className = 'form-button'>Send &gt;</button>
-                                </form>
                             </div>
                         </div>
                     </div>
