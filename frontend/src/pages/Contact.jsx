@@ -1,4 +1,4 @@
-import { AiOutlinePhone, AiOutlineMail, AiOutlineEnvironment, AiOutlineCalendar, AiOutlineFacebook, AiOutlineInstagram } from 'react-icons/ai';
+import { AiOutlinePhone, AiOutlineWhatsApp, AiOutlineMail, AiOutlineEnvironment, AiOutlineCalendar, AiOutlineFacebook, AiOutlineInstagram, AiOutlineShareAlt } from 'react-icons/ai';
 
 import './Contact.css';
 
@@ -15,65 +15,88 @@ const Contact = () => {
                             <div className = 'contact-info'>
                                 <h2 className = 'contact-title'>Información de Contacto</h2>
 
-                                <div className = 'contact-details'>
-                                    <div className = 'contact-item'>
-                                        <h3 className = 'contact-item-title'>Teléfono</h3>
-
-                                        <div className = 'contact-item-content'>
+                                {/* 2x2 GRID LAYOUT */}
+                                <div className = 'contact-grid'>
+                                    <div className = 'contact-grid-item'>
+                                        <div className = 'contact-item-header'>
                                             <AiOutlinePhone className = 'contact-icon' />
 
-                                            <div>
-                                                <p className = 'contact-text'>+52 871 719 4848</p>
-                                                <p className = 'contact-text'>+52 871 220 6353</p>
-                                            </div>
+                                            <h3 className = 'contact-item-title'>Teléfono</h3>
+                                        </div>
+                                        
+                                        <div className = 'contact-item-body'>
+                                            <p className = 'contact-text'>+52 871 719 4848</p>
                                         </div>
                                     </div>
 
-                                    <div className = 'contact-item'>
-                                        <h3 className = 'contact-item-title'>E-mail</h3>
-
-                                        <div className = 'contact-item-content'>
+                                    <div className = 'contact-grid-item'>
+                                        <div className = 'contact-item-header'>
                                             <AiOutlineMail className = 'contact-icon' />
 
+                                            <h3 className = 'contact-item-title'>E-mail</h3>
+                                        </div>
+
+                                        <div className = 'contact-item-body'>
                                             <a href = 'mailto:ferreteriaabrinal@hotmail.com'>ferreteriaabrinal@hotmail.com</a>
                                         </div>
                                     </div>
 
-                                    <div className = 'contact-item'>
-                                        <h3 className = 'contact-item-title'>Dirección</h3>
-
-                                        <div className = 'contact-item-content'>
+                                    <div className = 'contact-grid-item'>
+                                        <div className = 'contact-item-header'>
                                             <AiOutlineEnvironment className = 'contact-icon' />
 
+                                            <h3 className = 'contact-item-title'>Dirección</h3>
+                                        </div>
+
+                                        <div className = 'contact-item-body'>
                                             <p className = 'contact-text'>Tamazula 522, José Campillo Sáenz, Gómez Palacio, Dgo. 35079</p>
                                         </div>
                                     </div>
 
-                                    <div className = 'contact-item'>
-                                        <h3 className = 'contact-item-title'>Horarios</h3>
-
-                                        <div className = 'contact-item-content'>
+                                    <div className = 'contact-grid-item'>
+                                        <div className = 'contact-item-header'>
                                             <AiOutlineCalendar className = 'contact-icon' />
-                                            
-                                            <div>
-                                                <p className = 'contact-text'>Lunes - Viernes. 9 AM - 4 PM.</p>
-                                                <p className = 'contact-text'>Sábado. 9 AM - 4 PM.</p>
-                                                <p className = 'contact-text'>Domingo. Cerrado.</p>
-                                            </div>
+
+                                            <h3 className = 'contact-item-title'>Horarios</h3>
+                                        </div>
+
+                                        <div className = 'contact-item-body'>
+                                            <p className = 'contact-text'>Lunes - Viernes. 9 AM - 7 PM.</p>
+                                            <p className = 'contact-text'>Sábado. 9 AM - 4 PM.</p>
+                                            <p className = 'contact-text'>Domingo. Cerrado.</p>
                                         </div>
                                     </div>
 
-                                    <div className = 'contact-item'>
-                                        <h3 className = 'contact-item-title'>Redes Sociales</h3>
+                                    <div className = 'contact-grid-item'>
+                                        <div className = 'contact-item-header'>
+                                            <AiOutlineWhatsApp className = 'contact-icon' />
 
-                                        <div className = 'contact-social'>
-                                            <a href = 'https://www.facebook.com/ferreteriaaldaba' className = 'social-link'>
-                                                <AiOutlineFacebook className = 'social-icon' />
-                                            </a>
+                                            <h3 className = 'contact-item-title'>WhatsApp</h3>
+                                        </div>
 
-                                            <a href = 'https://www.instagram.com/abrinalferreteria/' className = 'social-link'>
-                                                <AiOutlineInstagram className = 'social-icon' />
-                                            </a>
+                                        <div className = 'contact-item-body'>
+                                            <p className = 'contact-text'>+52 871 220 6353</p>
+                                            <p className = 'contact-text'>+52 871 521 5756</p>
+                                        </div>
+                                    </div>
+
+                                    <div className = 'contact-grid-item'>
+                                        <div className = 'contact-item-header'>
+                                            <AiOutlineShareAlt className = 'contact-icon' />
+
+                                            <h3 className = 'contact-item-title'>Redes Sociales</h3>
+                                        </div>
+
+                                        <div className = 'contact-item-body'>
+                                            <div className = 'contact-social'>
+                                                <a href = 'https://www.facebook.com/ferreteriaaldaba' className = 'social-link'>
+                                                    <AiOutlineFacebook className = 'social-icon' />
+                                                </a>
+
+                                                <a href = 'https://www.instagram.com/abrinalferreteria/' className = 'social-link'>
+                                                    <AiOutlineInstagram className = 'social-icon' />
+                                                </a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
