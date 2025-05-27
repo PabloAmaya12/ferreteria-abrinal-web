@@ -1,51 +1,90 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
 
-@layer base {
+:root {
+    --primary-color: #0067ff;
+    --yellow-color: #feb60d;
+    --purple-color: #9771ff;
+    --iris-color: #01b5c5;
+    --heading-color: #181a1e;
+    --text-color: #4e545f;
+    --panel-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+section {
+    padding: 75px 0;
+}
+
+.container {
+    max-width: 1440px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.btn {
+    background-color: var(--primary-color);
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: white;
+    font-weight: 600;
+    margin-top: 38px;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.heading {
+    font-size: 44px;
+    line-height: 54px;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.text__para {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+    color: var(--text-color);
+    margin-top: 18px;
+}
+
+.hero__section {
+    /* background-image: url('./assets/images/hero.jpg'); */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+@media only screen and (max-width: 1024px) {
     section {
-        @apply py-[75px]
+        padding: 35px 0;
+    }
+
+    .container {
+        width: 100%;
     }
 }
 
-@layer components {
-    .container {
-        @apply max-w-full w-[1440px] px-5 mx-auto
-    }
-
-    .btn {
-        @apply bg-primaryColor py-[15px] px-[35px] rounded-[50px] text-white font-[600] mt-[38px]
-    }
-
+@media only screen and (max-width: 768px) {
     .heading {
-        @apply text-[44px] leading-[54px] font-[700] text-headingColor
+        font-size: 26px;
+        line-height: 36px;
     }
 
     .text__para {
-        @apply text-[18px] leading-[30px] font-[400] text-textColor mt-[18px]
-    }
-
-    .hero__section {
-        @apply bg-[url('./assets/images/hero.jpg')] bg-no-repeat bg-center bg-cover;
-    }
-}
-
-@media onyl screen and (max-width:1024px) {
-    section {
-        @apply py-[35px];
-    }
-
-    .container {
-        @apply w-full;
-    }
-}
-
-@media onyl screen and (max-width:768px) {
-    .heading {
-        @apply text-[26px] leading-[36px];
-    }
-
-    .text__para {
-        @apply text-[16px] leading-7 mt-3;
+        font-size: 16px;
+        line-height: 28px;
+        margin-top: 12px;
     }
 }
