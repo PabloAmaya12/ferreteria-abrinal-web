@@ -12,12 +12,20 @@ const navLinks = [
         display: 'Inicio'
     },
     {
+        path: '/home_v2',
+        display: 'Home_v2'
+    },
+    {
         path: '/catalog',
         display: 'Catálogo'
     },
     {
         path: '/catalog_v2',
         display: 'Catálogo_v2'
+    },
+    {
+        path: '/catalog_v3',
+        display: 'Catálogo_v3'
     },
     {
         path: '/contact',
