@@ -32,7 +32,7 @@ const Footer = () => {
                 <div className = 'footer__content'>
                     <div>
                         <p className = 'footer__text'>
-                            CopyRight © {year} developed by Pablo Amaya all right reserved.
+                            CopyRight © {year} Ferretería Abrinal. Todos los derechos reservados. Desarrollado por Pablo Amaya.
                         </p>
 
                         <div className = 'social__links'>

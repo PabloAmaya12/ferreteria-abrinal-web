@@ -61,7 +61,7 @@ const Home = () => {
 
                             <div className = 'hero__image-col'>
                                 <img src = {heroImg02} alt = 'Ferreteria Abrinal' className = 'hero__image' />
-                                <img src = {heroImg03} alt = 'Ferreteria Abrinal' className = 'hero__image' />
+                                {/* <img src = {heroImg03} alt = 'Ferreteria Abrinal' className = 'hero__image' /> */}
                             </div>
                         </div>
                     </div>
