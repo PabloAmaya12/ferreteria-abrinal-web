@@ -4,7 +4,6 @@ import './Home_v2.css';
 
 import heroImg01 from '../assets/images/hero.jpg';
 import heroImg02 from '../assets/images/hero_v2.jpg';
-import heroImg03 from '../assets/images/hero_v3.jpg';
 import stuff from '../assets/images/stuff.jpg';
 
 const Home_v2 = () => {
@@ -93,9 +92,6 @@ const Home_v2 = () => {
                             </div>
                             <div className = 'image-column'>
                                 <img src = {heroImg02} alt = 'Ferretería Abrinal' className = 'hero-img seconday' />
-                            </div>
-                            <div className = 'image-column'>
-                                <img src = {heroImg03} alt = 'Calidad Garantizada' className = 'hero-img secondary' />
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,5 @@
 import heroImg01 from '../assets/images/hero.jpg';
 import heroImg02 from '../assets/images/hero_v2.jpg';
-import heroImg03 from '../assets/images/hero_v3.jpg';
 
 import './Home.css';
 
@@ -61,7 +60,6 @@ const Home = () => {
 
                             <div className = 'hero__image-col'>
                                 <img src = {heroImg02} alt = 'Ferreteria Abrinal' className = 'hero__image' />
-                                {/* <img src = {heroImg03} alt = 'Ferreteria Abrinal' className = 'hero__image' /> */}
                             </div>
                         </div>
                     </div>

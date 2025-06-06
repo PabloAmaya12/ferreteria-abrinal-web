@@ -49,7 +49,7 @@ const Contact = () => {
                                         </div>
 
                                         <div className = 'contact-item-body'>
-                                            <p className = 'contact-text'>Tamazula 522, José Campillo Sáenz, Gómez Palacio, Dgo. 35079</p>
+                                            <p className = 'contact-text'>Tamazula 522, José Campillo Sáinz, Gómez Palacio, Dgo. 35079</p>
                                         </div>
                                     </div>
 
