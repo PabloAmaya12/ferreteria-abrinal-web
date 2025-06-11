@@ -118,7 +118,7 @@ const Footer = () => {
                                 <div className = 'contact-item'>
                                     <AiOutlineEnvironment className = 'contact-icon' />
 
-                                    <span>Tamazula 522, José Campillo Sáinz, Gómez Palacio, Dgo. 35079</span>
+                                    <span>Tamazula</span>
                                 </div>
 
                                 <div className = 'contact-item'>
@@ -130,7 +130,7 @@ const Footer = () => {
                                 <div className = 'contact-item'>
                                     <AiOutlineClockCircle className = 'contact-icon' />
 
-                                    <span>Lunes - Viernes. 9 AM - 7 PM.</span>
+                                    <span>Lunes</span>
                                 </div>
                             </div>
                         </div>

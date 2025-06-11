@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { BiMenu, BiX, BiSearch, BiShoppingBag, BiPhone, BiUser } from 'react-icons/bi';
+import { BiMenu, BiX, BiSearch, BiPhone, BiUser } from 'react-icons/bi';
 
 import './Header_v2.css';
 
@@ -12,10 +12,6 @@ const navLinks = [
     {
         path: '/home_v2',
         display: 'Home_v2'
-    },
-    {
-        path: '/catalog',
-        display: 'Catálogo',
     },
     {
         path: '/catalog_v2',
@@ -54,12 +50,18 @@ const Header_v2 = () => {
     useEffect(() => {
         handleStickyHeader();
 
-        return () => window.removeEventListener('scroll', handleStickyHeader)
+        return () => {
+            window.removeEventListener('scroll', handleStickyHeader);
+        };
     }, []);
 
+    const toggleMenu = () => menuRef.current.classList.toggle('.show-menu-v2');
+
+    /*
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
     };
+    */
 
     const toggleSearch = () => {
         setIsSearchOpen(!isSearchOpen);
@@ -72,14 +74,14 @@ const Header_v2 = () => {
                 <div className = 'container'>
                     <div className = 'top-bar-content'>
                         <div className = 'contact-info'>
-                            <span className = 'contact-item'>
+                            <h3 className = 'contact-item'>
                                 <BiPhone className = 'contact-icon' />
                                 +52 871 719 4848
-                            </span>
+                            </h3>
                         </div>
 
                         <div className = 'top-bar-rigth'>
-                            <span className = 'welcome-text'>Bienvenido a Ferretería Abrinal</span>
+                            <h2 className = 'welcome-text'>Bienvenido a Ferretería Abrinal,</h2>
                         </div>
                     </div>
                 </div>
@@ -93,7 +95,7 @@ const Header_v2 = () => {
                         <div className = 'logo-section'>
                             <NavLink to = '/' className = 'logo'>
                                 <div className = 'logo-icon'>
-                                    <span>🔧</span>
+                                    <span>🛠️</span>
                                 </div>
 
                                 <div className = 'logo-text'>
@@ -105,7 +107,7 @@ const Header_v2 = () => {
                         </div>
 
                         {/* SEARCH BAR */}
-                        <div className = {'search-section ${isSearchOpen ? "active" : ""}'}>
+                        <div className = {`search-section ${isSearchOpen ? 'active' : ""}`}>
                             <div className = 'search-bar'>
                                 <input type = 'text' placeholder = 'Buscar herramientas, marcas...' className = 'search-input' />
 
@@ -116,7 +118,7 @@ const Header_v2 = () => {
                         </div>
 
                         {/* NAVIGATION */}
-                        <nav className = {'navigation-v2 ${isMenuOpen ? "show-menu-v2 : ""}'}>
+                        <nav className = {`navigation-v2 ${isMenuOpen ? 'show-menu-v2' : ''}`}>
                             <ul className = 'menu-v2'>
                                 {navLinks.map((link, index) => (
                                     <li key = {index}>
@@ -142,12 +144,6 @@ const Header_v2 = () => {
                                 <BiUser />
                             </button>
 
-                            <button className = 'action-btn cart-btn'>
-                                <BiShoppingBag />
-
-                                <span className = 'cart-count'>0</span>
-                            </button>
-
                             <button className = 'menu-toggle' onClick = {toggleMenu}>
                                 {isMenuOpen ? <BiX /> : <BiMenu />}
                             </button>
@@ -156,7 +152,7 @@ const Header_v2 = () => {
                 </div>
 
                 {/* MOBILE MENU OVERLAY */}
-                {isMenuOpen && <div className = 'menu-overlay' onClick = {toggleMenu}></div>}
+                {/* isMenuOpen && <div className = 'menu-overlay' onClick = {toggleMenu}></div> */}
             </header>
         </>
     );

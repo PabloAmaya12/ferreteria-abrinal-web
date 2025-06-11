@@ -1,42 +1,44 @@
-import { AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService } from "react-icons/ai";
+import { AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService } from 'react-icons/ai';
 
 import './Home_v2.css';
 
 import heroImg01 from '../assets/images/hero.jpg';
 import heroImg02 from '../assets/images/hero_v2.jpg';
+import duplicadora from '../assets/images/duplicadora.jpg';
+import sierra from '../assets/images/sierra.jpg';
 import stuff from '../assets/images/stuff.jpg';
 
 const Home_v2 = () => {
     const features = [
         {
-            icon: <AiOutlineTool className = 'featured-icon' />,
+            icon: <AiOutlineTool className = 'feature-icon' />,
             title: 'Herramientas de Calidad',
             description: 'Trabajamos con las mejores marcas del mercado para garantizar durabilidad y rendimiento.',
         },
         {
-            icon: <AiOutlineCustomerService className = 'featured-icon' />,
+            icon: <AiOutlineCustomerService className = 'feature-icon' />,
             title: 'Atención Personalizada',
             description: 'Nuestro equipo de expertos te ayudará a encontrar la herramienta perfecta para tu proyecto.',
         },
         {
-            icon: <AiOutlineCheckCircle className = 'featured-icon' />,
+            icon: <AiOutlineCheckCircle className = 'feature-icon' />,
             title: 'Garantía Extendida',
             description: 'Ofrecemos garantía extendida en todos nuestros productos para tu tranquilidad.',
         },
     ]
 
     const topBrands = [
-        {name: 'Bosch', logo: stuff},
-        {name: 'DeWalt', logo: stuff},
-        {name: 'Makita', logo: stuff},
-        {name: 'Stanley', logo: stuff},
-        {name: 'Black & Decker', logo: stuff},
+        { name: 'Bosch', logo: stuff },
+        { name: 'DeWalt', logo: stuff },
+        { name: 'Makita', logo: stuff },
+        { name: 'Stanley', logo: stuff },
+        { name: 'Black & Decker', logo: stuff },
     ]
 
     return (
         <div className = 'home-v2'>
             {/* HERO SECTION */}
-            <section className = 'hero__section-v2'>
+            <section className = 'hero-section-v2'>
                 <div className = 'container'>
                     <div className = 'hero-content'>
                         {/* HERO TEXT */}
@@ -49,11 +51,12 @@ const Home_v2 = () => {
                                 <p className = 'hero-description'>
                                     En Ferretería Abrinal, nos dedicamos a ofrecer herramientas y marcas de la más alta calidad a nuestros clientes.
                                     Nos esforzamos constantemente por marcar la diferencia en la industria de herramientas y más allá.
+                                    Nuestro equipo está comprometido con la excelencia, la innovación y un servicio excepcional.
                                 </p>
 
                                 <div className = 'hero-buttons'>
-                                    <button className = 'btn btn-primary'>Explorar Catálogo</button>
-                                    <button className = 'btn btn-secondary'>Contactar</button>
+                                    <button className = 'btn'>Explorar Catálogo</button>
+                                    <button className = 'btn'>Contactar</button>
                                 </div>
                             </div>
 
@@ -88,10 +91,12 @@ const Home_v2 = () => {
                         {/* HERO IMAGES */}
                         <div className = 'hero-images'>
                             <div className = 'image-column'>
-                                <img src = {heroImg01} alt = 'Herramientas Profesionales' className = 'hero-img main' />
+                                <img src = {sierra} className = 'hero-img main' />
                             </div>
+
                             <div className = 'image-column'>
-                                <img src = {heroImg02} alt = 'Ferretería Abrinal' className = 'hero-img seconday' />
+                                <img src = {heroImg01} className = 'hero-img secondary' />
+                                <img src = {duplicadora} className = 'hero-img secondary' />
                             </div>
                         </div>
                     </div>
@@ -148,7 +153,7 @@ const Home_v2 = () => {
 
                         <p className = 'cta-description'>Encuentra las herramientas perfectas para llevar tus ideas a la realidad</p>
 
-                        <button className = 'btn btn-primary btn-large'>Ver Catálogo Completo</button>
+                        <button className = 'btn btn-large'>Ver Catálogo Completo</button>
                     </div>
                 </div>
             </section>

@@ -70,14 +70,9 @@ const Contact_v2 = () => {
                 'Sí, realizamos entregas en toda la ciudad. El costo de envío varía según la distancia y el peso del pedido.',
         },
         {
-            question: '¿Tienen servicio técnico?',
-            answer:
-                'Contamos con servicio técnico especializado para reparación y mantenimiento de herramientas eléctricas.',
-        },
-        {
             question: '¿Aceptan devoluciones?',
             answer:
-                'Aceptamos devoluciones dentro de los primeros 30 días con el producto en perfecto estado y con su empaque original.',
+                'Aceptamos devoluciones dentro de los primeros 3 días con el producto en perfecto estado y con su empaque original.',
         },
     ];
 

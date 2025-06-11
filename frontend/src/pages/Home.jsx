@@ -1,5 +1,6 @@
 import heroImg01 from '../assets/images/hero.jpg';
 import heroImg02 from '../assets/images/hero_v2.jpg';
+import sierra from '../assets/images/sierra.jpg'
 
 import './Home.css';
 

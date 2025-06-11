@@ -185,7 +185,7 @@
 }
 
 .contact-form-container {
-    background-color: #262eaf;
+    background-color: var(--primary-color);
     padding: 1.5rem;
     color: white;
 }
