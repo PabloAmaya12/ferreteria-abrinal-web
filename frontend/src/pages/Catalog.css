@@ -1,159 +1,218 @@
-.catalog-page {
+.catalog-v2-page {
     padding: 2rem 0;
     background-color: #f8f9fa;
     min-height: 100vh;
 }
 
-.catalog-content {
-    display: flex;
-    gap: 3rem;
-    align-items: flex-start;
+.catalog-header {
+    text-align: center;
+    margin-bottom: 3rem;
 }
 
-@media (max-width: 1024px) {
-    .catalog-content {
-        flex-direction: column;
-        gap: 2rem;
-    }
-}
-
-.section-title {
-    font-size: 1.75rem;
+.catalog-title {
+    font-size: 2.5rem;
     font-weight: 700;
-    color: var(--heading-color);
-    margin-bottom: 1.5rem;
-}
-
-/* TOP PRODUCTS SECTION */
-.top-products-section {
-    flex: 1;
-}
-
-.products-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1.5rem;
-}
-
-@media (max-width: 768px) {
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-.product-card {
-    background: white;
-    border-radius: 0.75rem;
-    overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.product-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-}
-
-.product-card.featured {
-    border: 2px solid var(--primary-color);
-}
-
-.product-image {
-    height: 200px;
-    overflow: hidden;
-    background: #f8f9fa;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.product-info {
-    padding: 1.25rem;
-}
-
-.product-name {
-    font-size: 1.125rem;
-    font-weight: 600;
     color: var(--heading-color);
     margin-bottom: 0.5rem;
 }
 
-.product-description {
+.catalog-subtitle {
+    font-size: 1.125rem;
     color: var(--text-color);
-    font-size: 0.875rem;
-    line-height: 1.5;
 }
 
-/* TOP BRANDS SECTION */
-.top-brands-section {
-    width: 300px;
-    flex-shrink: 0;
+/* FILTER SECTION */
+.filter-section {
+    margin-bottom: 2rem;
 }
 
-@media (max-width: 1024px) {
-    .top-brands-section {
-        width: 100%;
-    }
-}
-
-.brands-list {
+.filter-buttons {
     display: flex;
-    flex-direction: column;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 0.75rem 1.5rem;
+    border: 2px solid #e5e7eb;
+    background: white;
+    color: var(--text-color);
+    border-radius: 2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.filter-btn:active {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    color: white;
+}
+
+/* PRODUCTS GRID */
+.products-grid-v2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.5rem;
 }
 
-.brand-item {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    padding: 1.25rem;
+.product-card-v2 {
     background: white;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
+    overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
 }
 
-.brand-item:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+.product-card-v2:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.brand-logo {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
+/* isNew */
+/*
+.new-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background: var(--yellow-color);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 1rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    z-index: 2;
+}
+*/
+
+.product-image-v2 {
+    height: 250px;
+    position: relative;
+    overflow: hidden;
     background: #f8f9fa;
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
 }
 
-.brand-logo img {
+.product-image-v2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.product-card-v2:hover .product-image-v2 img {
+    transform: scale(1.05);
+}
+
+.product-overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.product-card-v2:hover .product-overlay {
+    opacity: 1;
+}
+
+.wishlist-btn {
+    background: white;
+    border: none;
+    border-radius: 50%;
     width: 40px;
     height: 40px;
-    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
 }
 
-.brand-info {
-    flex: 1;
+.wishlist-btn:hover {
+    background: var(--primary-color);
+    color: white;
 }
 
-.brand-name {
-    font-size: 1rem;
+.product-info-v2 {
+    padding: 1.25rem;
+}
+
+.product-brand {
+    font-size: 0.875rem;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.product-name-v2 {
+    font-size: 1.125rem;
     font-weight: 600;
     color: var(--heading-color);
-    margin-bottom: 0.25rem; 
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
 }
 
-.brand-description {
-    color: var(--text-color);
+.product-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.75rem;
+}
+
+.stars {
+    display: flex;
+    gap: 0.125rem;
+}
+
+.star-filled {
+    color: var(--yellow-color);
+}
+
+.star-empty {
+    color: #e5e7eb;
+}
+
+.rating-text {
     font-size: 0.875rem;
-    line-height: 1.4;
+    color: var(--text-color);
+}
+
+.product-price-v2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.current-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background: #0056d6;
 }

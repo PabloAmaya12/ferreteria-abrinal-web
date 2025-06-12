@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { AiOutlineHeart, AiOutlineStar } from 'react-icons/ai';
 
-import './Catalog_v2.css';
 import heroImg01 from '../assets/images/hero.jpg';
+
+import './Catalog_v2.css';
 
 const Catalog_v2 = () => {
     const [activeFilter, setActiveFilter] = useState('All Brands');

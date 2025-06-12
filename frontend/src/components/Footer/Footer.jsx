@@ -1,6 +1,8 @@
 import { AiFillFacebook, AiOutlineInstagram, AiFillLinkedin, AiOutlineMail, AiOutlinePhone, AiOutlineEnvironment, AiOutlineClockCircle } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
+import Kaisser from '../../assets/images/Kaisser.png';
+
 import './Footer.css';
 
 const Footer = () => {
@@ -25,14 +27,15 @@ const Footer = () => {
         },
         {
             name: 'LinkedIn',
-            path: 'https://www.linkedin.com/company/ferreter%C3%ADa-abrinal/about/',
+            path: 'https://www.linkedin.com/company/ferreteria-abrinal/',
             icon: <AiFillLinkedin />,
         },
     ];
 
     return (
         <footer className = 'footer-v2'>
-            {/* NEWSLETTER SECTION */}
+            { /* NEWSLETTER SECTION */ }
+            { /*
             <div className = 'newsletter-section'>
                 <div className = 'container'>
                     <div className = 'newsletter-content'>
@@ -55,6 +58,7 @@ const Footer = () => {
                     </div>
                 </div>
             </div>
+            */ }
 
             {/* MAIN FOOTER */}
             <div className = 'footer-main'>
@@ -110,28 +114,10 @@ const Footer = () => {
                             </ul>
                         </div>
 
-                        {/* CONTACT INFO */}
+                        {/* FOOTER IMAGE */}
                         <div className = 'footer-column'>
-                            <h4 className = 'footer-title'>Contacto</h4>
-
-                            <div className = 'contact-info'>
-                                <div className = 'contact-item'>
-                                    <AiOutlineEnvironment className = 'contact-icon' />
-
-                                    <span>Tamazula</span>
-                                </div>
-
-                                <div className = 'contact-item'>
-                                    <AiOutlineMail className = 'contact-icon' />
-
-                                    <span>ferreteriaabrinal@hotmail.com</span>
-                                </div>
-
-                                <div className = 'contact-item'>
-                                    <AiOutlineClockCircle className = 'contact-icon' />
-
-                                    <span>Lunes</span>
-                                </div>
+                            <div className = 'footer-image'>
+                                <img src = {Kaisser} className = 'footer-img' />
                             </div>
                         </div>
                     </div>

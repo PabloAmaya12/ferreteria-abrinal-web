@@ -2,18 +2,14 @@ import { useEffect, useRef} from 'react';
 import { NavLink } from 'react-router-dom';
 import { BiMenu } from 'react-icons/bi';
 
-
 import logo from '../../assets/images/logo.png'
+
 import './Header.css'
 
 const navLinks = [
     {
         path: '/',
         display: 'Inicio'
-    },
-    {
-        path: '/home_v2',
-        display: 'Home_v2'
     },
     {
         path: '/catalog',

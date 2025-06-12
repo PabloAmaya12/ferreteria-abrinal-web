@@ -1,8 +1,9 @@
 /* TOP BAR */
 .top-bar {
+    height: 80px;
     background: var(--heading-color);
     color: white;
-    padding: 0.5rem 0;
+    padding: 1.5rem 0;
     font-size: 0.875rem;
 }
 

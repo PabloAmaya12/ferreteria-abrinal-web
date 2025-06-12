@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { BiMenu, BiX, BiSearch, BiPhone, BiUser } from 'react-icons/bi';
+import { AiOutlinePhone } from 'react-icons/ai';
+import { BiMenu, BiX, BiSearch, BiUser } from 'react-icons/bi';
 
 import './Header_v2.css';
 
@@ -10,24 +11,16 @@ const navLinks = [
         display: 'Inicio',
     },
     {
-        path: '/home_v2',
-        display: 'Home_v2'
+        path: '/catalog',
+        display: 'Catálogo',
     },
     {
         path: '/catalog_v2',
         display: 'Catálogo_v2',
     },
     {
-        path: '/catalog_v3',
-        display: 'Catálogo_v3',
-    },
-    {
         path: '/contact',
         display: 'Contacto',
-    },
-    {
-        path: '/contact_v2',
-        display: 'Contacto_v2',
     },
 ];
 
@@ -74,10 +67,10 @@ const Header_v2 = () => {
                 <div className = 'container'>
                     <div className = 'top-bar-content'>
                         <div className = 'contact-info'>
-                            <h3 className = 'contact-item'>
-                                <BiPhone className = 'contact-icon' />
+                            <h4 className = 'contact-item'>
+                                <AiOutlinePhone className = 'contact-icon' />
                                 +52 871 719 4848
-                            </h3>
+                            </h4>
                         </div>
 
                         <div className = 'top-bar-rigth'>
