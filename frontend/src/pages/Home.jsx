@@ -1,4 +1,4 @@
-import { AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService } from 'react-icons/ai';
+import { AiOutlineEye, AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
 import './Home.css';
@@ -51,12 +51,12 @@ const Home = () => {
                                 </p>
 
                                 <div className = 'hero-buttons'>
-                                    <NavLink to = '/catalog_v3'>
-                                        <button className = 'btn'>Explorar Catálogo</button>
+                                    <NavLink to = '/catalog'>
+                                        <button className = 'btn-primary'>Explorar Catálogo</button>
                                     </NavLink>
                                     
                                     <NavLink to = '/contact'>
-                                        <button className = 'btn'>Contactar</button>
+                                        <button className = 'btn-primary'>Contactar</button>
                                     </NavLink>
                                 </div>
                             </div>
@@ -98,6 +98,77 @@ const Home = () => {
                             <div className = 'image-column'>
                                 <img src = 'https://www.milwaukeetool.mx/--/web-images/sc/12d101e29a22470ebd2fd4cf8d602f72?hash=fbd438c3d9d6ebcb13224a9da356f4b3&lang=en&mw=3840' className = 'hero-img secondary' />
                                 <img src = 'https://www.makita.com.mx/wp-content/uploads/2025/03/GA4570_Mini-esmeriladora-angular-Xlock.png' className = 'hero-img secondary' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            {/* VISION & MISSION SECTION */}
+            <section className = 'vision-mission-section'>
+                <div className = 'container'>
+                    <div className = 'vision-mission-content'>
+                        {/* VIDEO */}
+                        <div className = 'vision-video'>
+                            <div className = 'video-container'>
+                                <iframe
+                                    src = ''
+                                    title = 'Ferreteria Abrinal - Nuestra Historia'
+                                    allow = 'accelerometer; autoplay; clipboard-white; encrypted-media; gyroscope; picture-in-picture'
+                                    allowFullScreen
+                                    className = 'vision-iframe'
+                                ></iframe>
+                            </div>
+                        </div>
+
+                        {/* VISION & MISSION TEXT */}
+                        <div className = 'vision-text'>
+                            <div className = 'vision-header'>
+                                <h2 className = 'vision-title'>Nuestra Visión y Misión</h2>
+
+                                <div className = 'vision-divider'></div>
+                            </div>
+
+                            <div className = 'vision-item'>
+                                <div className = 'vision-icon-wrapper'>
+                                    <AiOutlineEye className = 'vision-icon' />
+                                </div>
+
+                                <div className = 'vision-content'>
+                                    <h3 className = 'vision-item-title'>Visión</h3>
+
+                                    <p className = 'vision-description'>
+                                        Ser la ferretería lider en la región, reconocida por la calidad de nuestros productos,
+                                        la excelencia en el servicio al cliente y nuestro compromiso con la innovación y el desarrollo sostenible.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className = 'vision-item'>
+                                <div className = 'vision-icon-wrapper'>
+                                    <AiOutlineAim className = 'vision-icon' />
+                                </div>
+
+                                <div className = 'vision-content'>
+                                    <h3 className = 'vision-item-title'>Misión</h3>
+
+                                    <p className = 'vision-description'>
+                                        Proporcionar a nuestros clientes las mejores herramientas y productos de ferretería,
+                                        ofreciendo asesoramiento experto y soluciones integrales para sus proyectos,
+                                        contribuyendo así al desarrollo de nuestra comunidad.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div className = 'vision-values'>
+                                <h3 className = 'values-title'>Nuestros Valores</h3>
+
+                                <ul className = 'values-list'>
+                                    <li className = 'value-item'>Calidad en cada producto</li>
+                                    <li className = 'value-item'>Integridad en nuestras acciones</li>
+                                    <li className = 'value-item'>Compromiso con el cliente</li>
+                                    <li className = 'value-item'>Innovación constante</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
@@ -154,7 +225,7 @@ const Home = () => {
 
                         <p className = 'cta-description'>Encuentra las herramientas perfectas para llevar tus ideas a la realidad</p>
 
-                        <button className = 'btn btn-large'>Ver Catálogo Completo</button>
+                        <button className = 'btn-primary'>Ver Catálogo Completo</button>
                     </div>
                 </div>
             </section>

@@ -85,16 +85,16 @@ const Header_v2 = () => {
                 <div className = 'container'>
                     <div className = 'header-content'>
                         {/* LOGO */}
-                        <div className = 'logo-section'>
+                        <div className = 'header-logo-section'>
                             <NavLink to = '/' className = 'logo'>
-                                <div className = 'logo-icon'>
+                                <div className = 'header-logo-icon'>
                                     <span>🛠️</span>
                                 </div>
 
-                                <div className = 'logo-text'>
-                                    <h2 className = 'logo-title'>Ferretería Abrinal</h2>
+                                <div className = 'header-logo-text'>
+                                    <h2 className = 'header-logo-title'>Ferretería Abrinal</h2>
 
-                                    <span className = 'logo-subtitle'>Herramientas de Calidad</span>
+                                    <span className = 'header-logo-subtitle'>Herramientas de Calidad</span>
                                 </div>
                             </NavLink>
                         </div>

@@ -68,7 +68,7 @@
 }
 
 /* LOGO SECTION */
-.logo-section {
+.header-logo-section {
     flex-shrink: 0;
 }
 
@@ -80,7 +80,7 @@
     color: inherit;
 }
 
-.logo-icon {
+.header-logo-icon {
     width: 50px;
     height: 50px;
     background: linear-gradient(135deg, var(--primary-color), #0056d6);
@@ -91,12 +91,12 @@
     font-size: 1.5rem;
 }
 
-.logo-text {
+.header-logo-text {
     display: flex;
     flex-direction: column;
 }
 
-.logo-title {
+.header-logo-title {
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--heading-color);
@@ -104,7 +104,7 @@
     line-height: 1.2;
 }
 
-.logo-subtitle {
+.header-logo-subtitle {
     font-size: 0.75rem;
     color: var(--text-color);
     font-weight: 500;

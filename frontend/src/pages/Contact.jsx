@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AiOutlinePhone, AiOutlineMail, AiOutlineEnvironment, AiOutlineClockCircle, AiOutlineQuestionCircle, AiOutlineCalendar, AiOutlineFacebook, AiOutlineInstagram, AiOutlineShareAlt, AiOutlineWhatsApp } from 'react-icons/ai';
+import { AiOutlinePhone, AiOutlineMail, AiOutlineEnvironment, AiOutlineClockCircle, AiOutlineQuestionCircle, AiOutlineCalendar, AiFillFacebook, AiOutlineInstagram, AiFillLinkedin, AiOutlineShareAlt, AiOutlineWhatsApp } from 'react-icons/ai';
 
 import './Contact.css';
 
@@ -32,8 +32,26 @@ const Contact = () => {
             icon: <AiOutlineClockCircle className = 'method-icon' />,
             title: 'Horarios',
             description: 'Estamos abiertos',
-            info: 'Lunes - Viernes. 9 AM - 7 PM',
+            info: 'Lunes - Viernes. 9 AM - 7 PM.',
             action: null,
+        },
+    ];
+
+    const socialLinks = [
+        {
+            name: 'Facebook',
+            path: 'https://www.facebook.com/ferreteriaaldaba',
+            icon: <AiFillFacebook />,
+        },
+        {
+            name: 'Instagram',
+            path: 'https://www.instagram.com/abrinalferreteria/',
+            icon: <AiOutlineInstagram />,
+        },
+        {
+            name: 'LinkedIn',
+            path: 'https://www.linkedin.com/company/ferreteria-abrinal/',
+            icon: <AiFillLinkedin />,
         },
     ];
 
@@ -195,13 +213,20 @@ const Contact = () => {
                                     
                                             <div className = 'contact-item-body'>
                                                 <div className = 'contact-social'>
-                                                    <a href = 'https://www.facebook.com/ferreteriaaldaba' className = 'social-link'>
-                                                        <AiOutlineFacebook className = 'social-icon' />
-                                                    </a>
-                                    
-                                                    <a href = 'https://www.instagram.com/abrinalferreteria/' className = 'social-link'>
-                                                        <AiOutlineInstagram className = 'social-icon' />
-                                                    </a>
+                                                    <div className = 'contact-social-links'>
+                                                        {socialLinks.map((link, index) => (
+                                                            <a
+                                                                key = {index}
+                                                                href = {link.path}
+                                                                target = '_blank'
+                                                                rel = 'noopener noreferrer'
+                                                                className = 'contact-social-link'
+                                                                aria-label = {link.name}
+                                                            >
+                                                                {link.icon}
+                                                            </a>
+                                                        ))}
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>

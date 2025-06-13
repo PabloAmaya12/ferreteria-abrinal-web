@@ -95,13 +95,13 @@
     color: var(--heading-color);
 }
 
-.method-info.link {
+.method-info-link {
     color: var(--primary-color);
     text-decoration: none;
     transition: color 0.3s;
 }
 
-.method-info.link:hover {
+.method-info-link:hover {
     color: #0056d6;
 }
 
@@ -256,24 +256,6 @@
     line-height: 1.5;
 }
 
-/*
-.contact-text {
-    color: #6b7280;
-    line-height: 1.5;
-    font-size: 0.875rem;
-}
-
-.contact-link {
-    color: #4b5563;
-    text-decoration: none;
-}
-*/
-
-.contact-link:hover {
-    text-decoration: underline;
-    color: var(--primary-color);
-}
-
 .contact-social {
     display: flex;
     align-items: center;
@@ -281,25 +263,36 @@
 }
 
 /*
-.social-link {
-    color: #4b5563;
-    text-decoration: none;
+.contact-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
 }
 */
 
-.social-link {
-    color: #6b7280;
-    text-decoration: none;
+.contact-social-links {
+    display: flex;
+    gap: 0.75rem;
 }
 
-.social-link:hover {
-    /* color: #1f2937; */
+.contact-social-link {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background: #f8f9fa;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
     color: var(--primary-color);
+    font-size: 1.25rem;
 }
 
-.social-icon {
-    width: 1.25rem;
-    height: 1.25rem;
+.contact-social-link:hover {
+    background: var(--primary-color);
+    color: white;
 }
 
 /* FAQ SECTION */

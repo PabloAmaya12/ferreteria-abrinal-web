@@ -1,7 +1,8 @@
-import { AiFillFacebook, AiOutlineInstagram, AiFillLinkedin, AiOutlineMail, AiOutlinePhone, AiOutlineEnvironment, AiOutlineClockCircle } from "react-icons/ai";
+import { AiFillFacebook, AiOutlineInstagram, AiFillLinkedin } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
 import Kaisser from '../../assets/images/Kaisser.png';
+import Kaisser_v2 from '../../assets/images/Kaisser_v2.png';
 
 import './Footer.css';
 
@@ -33,7 +34,7 @@ const Footer = () => {
     ];
 
     return (
-        <footer className = 'footer-v2'>
+        <footer className = 'footer'>
             { /* NEWSLETTER SECTION */ }
             { /*
             <div className = 'newsletter-section'>
@@ -66,15 +67,15 @@ const Footer = () => {
                     <div className = 'footer-grid'>
                         {/* COMPANY INFO */}
                         <div className = 'footer-column'>
-                            <div className = 'footer-logo'>
-                                <div className = 'logo-icon'>
-                                    <span>🔧</span>
+                            <div className = 'footer-logo-section'>
+                                <div className = 'footer-logo-icon'>
+                                    <span>🛠️</span>
                                 </div>
 
-                                <div className = 'logo-text'>
-                                    <h3 className = 'logo-title'>Ferretería Abrinal</h3>
+                                <div className = 'footer-logo-text'>
+                                    <h3 className = 'footer-logo-title'>Ferretería Abrinal</h3>
 
-                                    <span className = 'logo-subtitle'>Herramientas de Calidad</span>
+                                    <span className = 'footer-logo-subtitle'>Herramientas de Calidad</span>
                                 </div>
                             </div>
 
@@ -83,14 +84,14 @@ const Footer = () => {
                                 Ofrecemos las mejores herramientas y marcas del mercado.
                             </p>
 
-                            <div className = 'social-links'>
+                            <div className = 'footer-social-links'>
                                 {socialLinks.map((link, index) => (
                                     <a
                                         key = {index}
                                         href = {link.path}
                                         target = '_blank'
                                         rel = 'noopener noreferrer'
-                                        className = 'social-link'
+                                        className = 'footer-social-link'
                                         aria-label = {link.name}
                                     >
                                         {link.icon}
@@ -117,7 +118,7 @@ const Footer = () => {
                         {/* FOOTER IMAGE */}
                         <div className = 'footer-column'>
                             <div className = 'footer-image'>
-                                <img src = {Kaisser} className = 'footer-img' />
+                                <img src = {Kaisser_v2} className = 'footer-img' />
                             </div>
                         </div>
                     </div>
@@ -128,7 +129,7 @@ const Footer = () => {
             <div className = 'footer-bottom'>
                 <div className = 'container'>
                     <div className = 'footer-bottom-content'>
-                        <p className = 'copyright'>Copyright © {year} Ferretería Abrinal. Todos los derechos reservados.</p>
+                        <p className = 'copyright'>© {year} Ferretería Abrinal. Todos los derechos reservados.</p>
 
                         <p className = 'developer-credit'>
                             Desarrollado por {' '}
