@@ -213,7 +213,12 @@
     color: var(--primary-color);
 }
 
-/* CONTACT INFO */
+/* FOOTER IMAGE */
+.footer-image-column {
+    justify-self: end;
+    align-self: start;
+}
+
 .footer-image {
     display: flex;
     justify-content: flex-end;
@@ -232,6 +237,18 @@
 
 .footer-img:hover {
     transform: scale(1.05);
+}
+
+@media (max-width: 1024px) {
+    .footer-image-column {
+        justify-self: center;
+        grid-column: 1 / -1;
+        order: -1;
+    }
+
+    .footer-image {
+        justify-content: center;
+    }
 }
 
 @media (max-width: 768px) {

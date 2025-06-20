@@ -108,23 +108,37 @@ const Home = () => {
             <section className = 'vision-mission-section'>
                 <div className = 'container'>
                     <div className = 'vision-mission-content'>
-                        {/* VIDEO */}
-                        <div className = 'vision-video'>
-                            <div className = 'video-container'>
-                                <iframe
-                                    src = ''
-                                    title = 'Ferreteria Abrinal - Nuestra Historia'
-                                    allow = 'accelerometer; autoplay; clipboard-white; encrypted-media; gyroscope; picture-in-picture'
-                                    allowFullScreen
-                                    className = 'vision-iframe'
-                                ></iframe>
+                        {/* VISION IMAGES - LEFT SIDE */}
+                        <div className = 'vision-images'>
+                            <div className = 'image-column'>
+                                <img
+                                    src = 'https://www.truper.com/media/import/imagenes/SINCO-12.jpg'
+                                    alt = 'Ferreteria Abrinal - Nuestra Historia'
+                                    className = 'vision-img-main'
+                                />
+                            </div>
+
+                            <div className = 'image-column'>
+                                <img
+                                    src = 'https://www.milwaukeetool.mx/--/web-images/sc/12d101e29a22470ebd2fd4cf8d602f72?hash=fbd438c3d9d6ebcb13224a9da356f4b3&lang=en&mw=3840'
+                                    alt = 'Tienda Ferreteria Abrinal'
+                                    className = 'vision-img-secondary'
+                                />
+
+                                <img
+                                    src = 'https://www.makita.com.mx/wp-content/uploads/2025/03/GA4570_Mini-esmeriladora-angular-Xlock.png'
+                                    alt = 'Tienda Ferreteria Abrinal'
+                                    className = 'vision-img-secondary'
+                                />
                             </div>
                         </div>
 
-                        {/* VISION & MISSION TEXT */}
+                        {/* VISION TEXT - RIGHT SIDE */}
                         <div className = 'vision-text'>
-                            <div className = 'vision-header'>
-                                <h2 className = 'vision-title'>Nuestra Visión y Misión</h2>
+                            <div className = 'vision-text-content'>
+                                <h2 className = 'vision-title'>
+                                    Nuestra <span className = 'highligth'>Visión y Misión</span>
+                                </h2>
 
                                 <div className = 'vision-divider'></div>
                             </div>

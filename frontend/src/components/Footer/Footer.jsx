@@ -116,7 +116,7 @@ const Footer = () => {
                         </div>
 
                         {/* FOOTER IMAGE */}
-                        <div className = 'footer-column'>
+                        <div className = 'footer-column footer-image-column'>
                             <div className = 'footer-image'>
                                 <img src = {Kaisser_v2} className = 'footer-img' />
                             </div>

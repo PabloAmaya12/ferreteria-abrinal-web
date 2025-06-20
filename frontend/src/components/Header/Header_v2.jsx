@@ -134,7 +134,9 @@ const Header_v2 = () => {
                             </button>
 
                             <button className = 'action-btn'>
-                                <BiUser />
+                                <NavLink to = '/login'>
+                                    <BiUser />
+                                </NavLink>
                             </button>
 
                             <button className = 'menu-toggle' onClick = {toggleMenu}>
