@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { AiOutlineUser, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible, AiOutlineMail, AiOutlineGoogle, AiOutlineFacebook, AiOutlineArrowRight } from 'react-icons/ai';
+import { AiOutlineUser, AiOutlineLock, AiOutlineEye, AiOutlineEyeInvisible, AiOutlineMail, AiOutlineGoogle, AiFillFacebook, AiOutlineArrowRight } from 'react-icons/ai';
 
 import './LogIn.css';
 
@@ -132,8 +132,8 @@ const LogIn = () => {
                                 Continuar con Google
                             </button>
 
-                            <button className = 'social-btn google-btn'>
-                                <AiOutlineFacebook className = 'login-social-icon'/>
+                            <button className = 'social-btn facebook-btn'>
+                                <AiFillFacebook className = 'login-social-icon'/>
                                 Continuar con Facebook
                             </button>
                         </div>
@@ -150,9 +150,120 @@ const LogIn = () => {
                                         <AiOutlineUser className = 'label-icon'/>
                                         Nombre Completo
                                     </label>
+
+                                    <input
+                                        type = 'text'
+                                        id = 'name'
+                                        name = 'name'
+                                        value = {formData.name}
+                                        onChange = {handleChange}
+                                        className = 'form-input'
+                                        placeholder = 'Tu nombre completo'
+                                        required = {!isLogin}
+                                    />
                                 </div>
                             )}
+
+                            <div className = 'form-group'>
+                                <label htmlFor = 'email' className = 'form-label'>
+                                    <AiOutlineMail className = 'label-icon' />
+                                    Correo Electrónico
+                                </label>
+
+                                <input
+                                    type = 'email'
+                                    id = 'email'
+                                    name = 'email'
+                                    value = {formData.email}
+                                    onChange = {handleChange}
+                                    className = 'form-input'
+                                    placeholder = 'tu@email.com'
+                                    required
+                                />
+                            </div>
+
+                            <div className = 'form-group'>
+                                <label htmlFor = 'password' className = 'form-label'>
+                                    <AiOutlineLock className = 'label-icon' />
+                                    Contraseña
+                                </label>
+
+                                <div className = 'password-input-wrapper'>
+                                    <input
+                                        type = {showPassword ? 'text' : 'password'}
+                                        id = 'password'
+                                        name = 'password'
+                                        value = {formData.password}
+                                        onChange = {handleChange}
+                                        className = 'form-input'
+                                        placeholder = 'Tu contraseña'
+                                        required
+                                    />
+
+                                    <button
+                                        type = 'button'
+                                        className = 'password-toggle'
+                                        onClick = {togglePasswordVisibility}
+                                        aria-label = 'Toggle password visibility'
+                                    >
+                                        {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
+                                    </button>
+                                </div>
+                            </div>
+
+                            {!isLogin && (
+                                <div className = 'form-group'>
+                                    <label htmlFor = 'confirmPassword' className = 'form-label'>
+                                        <AiOutlineLock className = 'label-icon'/>
+                                        Confirmar Contraseña
+                                    </label>
+
+                                    <input
+                                        type = 'password'
+                                        id = 'confirmPassword'
+                                        name = 'confirmPassword'
+                                        value = {formData.confirmPassword}
+                                        onChange = {handleChange}
+                                        className = 'form-input'
+                                        placeholder = 'Confirma tu contraseña'
+                                        required = {!isLogin}
+                                    />
+                                </div>
+                            )}
+
+                            <div className = 'form-options'>
+                                <label className = 'checkbox-label'>
+                                    <input
+                                        type = 'checkbox'
+                                        name = 'rememberMe'
+                                        checked = {formData.rememberMe}
+                                        onChange = {handleChange}
+                                        className = 'checkbox-input'
+                                    />
+
+                                    <span className = 'checkbox-custom'></span>
+                                    {isLogin ? 'Recordarme' : 'Acepto los términos y condiciones'}
+                                </label>
+                            </div>
+
+                            <button type = 'submit' className = 'submit-btn'>
+                                {isLogin ? 'Iniciar Sesión' : 'Crear Cuenta'}
+                                <AiOutlineArrowRight className = 'btn-icon' />
+                            </button>
                         </form>
+
+                        <div className = 'form-footer'>
+                            <p className = 'switch-text'>
+                                {isLogin ? '¿No tienes una cuenta?' : '¿Ya tienes una cuenta?'}
+                                <button type = 'button' className = 'switch-btn' onClick = {switchMode}>
+                                    {isLogin ? 'Crear cuenta' : 'Iniciar sesión'}
+                                </button>
+                            </p>
+
+                            <NavLink to = '/' className = 'back-home'>
+                                ← Volver al Inicio
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </div>
