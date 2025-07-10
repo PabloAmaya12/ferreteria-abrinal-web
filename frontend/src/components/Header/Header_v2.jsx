@@ -133,12 +133,6 @@ const Header_v2 = () => {
                                 <BiSearch />
                             </button>
 
-                            <button className = 'action-btn'>
-                                <NavLink to = '/login'>
-                                    <BiUser />
-                                </NavLink>
-                            </button>
-
                             <button className = 'menu-toggle' onClick = {toggleMenu}>
                                 {isMenuOpen ? <BiX /> : <BiMenu />}
                             </button>

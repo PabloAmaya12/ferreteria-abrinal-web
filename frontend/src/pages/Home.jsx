@@ -1,6 +1,17 @@
 import { AiOutlineEye, AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
+import Sierra from '../assets/images/Sierra.jpg';
+import Rotomartillo from '../assets/images/Rotomartillo.webp';
+import Esmeriladora from '../assets/images/Esmeriladora.png'
+
+import Austromex from '../assets/images/Austromex.webp';
+import Truper from '../assets/images/Truper.png';
+import Milwaukee from '../assets/images/Milwaukee.png';
+import Dewalt from '../assets/images/Dewalt.png';
+import Makita from '../assets/images/Makita.png';
+import Urrea from '../assets/images/Urrea.webp';
+
 import './Home.css';
 
 const Home = () => {
@@ -23,12 +34,12 @@ const Home = () => {
     ]
 
     const topBrands = [
-        { name: 'Austromex', logo: 'https://www.austromex.com.mx/media/wysiwyg/marca/austromex.png' },
-        { name: 'Truper', logo: 'https://www.riegofincatec.com/wp-content/uploads/2020/12/truper-logo.png' },
-        { name: 'Milwaukee', logo: 'https://i.pinimg.com/originals/43/fd/3e/43fd3e20cfd21e0d7f228efd290f5f95.png' },
-        { name: 'DeWalt', logo: 'https://brandlogos.net/wp-content/uploads/2021/10/dewalt-logo.png' },
-        { name: 'Makita', logo: 'https://logos-world.net/wp-content/uploads/2023/03/Makita-Logo.png' },
-        { name: 'Urrea', logo: 'https://www.pcdigital.com.mx/wp-content/uploads/2024/06/URREA.png' },
+        { name: 'Austromex', logo: Austromex },
+        { name: 'Truper', logo: Truper },
+        { name: 'Milwaukee', logo: Milwaukee },
+        { name: 'DeWalt', logo: Dewalt },
+        { name: 'Makita', logo: Makita },
+        { name: 'Urrea', logo: Urrea },
     ]
 
     return (
@@ -92,12 +103,12 @@ const Home = () => {
                         {/* HERO IMAGES */}
                         <div className = 'hero-images'>
                             <div className = 'image-column'>
-                                <img src = 'https://www.truper.com/media/import/imagenes/SINCO-12.jpg' className = 'hero-img main' />
+                                <img src = { Sierra } className = 'hero-img main' />
                             </div>
 
                             <div className = 'image-column'>
-                                <img src = 'https://www.milwaukeetool.mx/--/web-images/sc/12d101e29a22470ebd2fd4cf8d602f72?hash=fbd438c3d9d6ebcb13224a9da356f4b3&lang=en&mw=3840' className = 'hero-img secondary' />
-                                <img src = 'https://www.makita.com.mx/wp-content/uploads/2025/03/GA4570_Mini-esmeriladora-angular-Xlock.png' className = 'hero-img secondary' />
+                                <img src = { Rotomartillo } className = 'hero-img secondary' />
+                                <img src = { Esmeriladora } className = 'hero-img secondary' />
                             </div>
                         </div>
                     </div>
@@ -112,7 +123,7 @@ const Home = () => {
                         <div className = 'vision-images'>
                             <div className = 'image-column'>
                                 <img
-                                    src = 'https://www.truper.com/media/import/imagenes/SINCO-12.jpg'
+                                    src = { Sierra }
                                     alt = 'Ferreteria Abrinal - Nuestra Historia'
                                     className = 'vision-img-main'
                                 />
@@ -120,13 +131,13 @@ const Home = () => {
 
                             <div className = 'image-column'>
                                 <img
-                                    src = 'https://www.milwaukeetool.mx/--/web-images/sc/12d101e29a22470ebd2fd4cf8d602f72?hash=fbd438c3d9d6ebcb13224a9da356f4b3&lang=en&mw=3840'
+                                    src = { Rotomartillo }
                                     alt = 'Tienda Ferreteria Abrinal'
                                     className = 'vision-img-secondary'
                                 />
 
                                 <img
-                                    src = 'https://www.makita.com.mx/wp-content/uploads/2025/03/GA4570_Mini-esmeriladora-angular-Xlock.png'
+                                    src = { Esmeriladora }
                                     alt = 'Tienda Ferreteria Abrinal'
                                     className = 'vision-img-secondary'
                                 />
