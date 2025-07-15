@@ -1,4 +1,4 @@
-import { AiOutlineEye, AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService } from 'react-icons/ai';
+import { AiOutlineEye, AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService, AiOutlineRocket, AiOutlineStar, AiOutlineTrophy, AiOutlineHeart, AiOutlineTeam } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
 import Sierra from '../assets/images/Sierra.jpg';
@@ -40,6 +40,33 @@ const Home = () => {
         { name: 'DeWalt', logo: Dewalt },
         { name: 'Makita', logo: Makita },
         { name: 'Urrea', logo: Urrea },
+    ]
+
+    const storyMilestones = [
+        {
+            year: '2014',
+            title: 'Fundación',
+            description: 'Iniciamos con el sueño de ser la ferretería de confianza de la comunidad',
+            icon: <AiOutlineRocket className = 'milestone-icon' />,
+        },
+        {
+            year: '2018',
+            title: 'Expansión',
+            description: 'Ampliamos nuestro catálogo con más de 50 marcas reconocidas',
+            icon: <AiOutlineStar className = 'milestone-icon'/>,
+        },
+        {
+            year: '2021',
+            title: 'Reconocimiento',
+            description: 'Premiados como la mejor ferretería local por servicio al cliente',
+            icon: <AiOutlineTrophy className = 'milestone-icon' />,
+        },
+        {
+            year: '2025',
+            title: 'Presente',
+            description: 'Más de 10,000 clientes satisfechos y creciendo cada día',
+            icon: <AiOutlineTrophy className = 'milestone-icon' />
+        },
     ]
 
     return (
@@ -115,35 +142,91 @@ const Home = () => {
                 </div>
             </section>
 
+            {/* OUR STORY SECTION */}
+            <section className = 'story-section'>
+                <div className = 'container'>
+                    <div className = 'story-header'>
+                        <div className = 'story-badge'>
+                            <AiOutlineHeart className = 'badge-icon' />
+
+                            <span>Nuestra Historia</span>
+                        </div>
+
+                        <h2 className = 'story-title'>
+                            Construyendo <span className = 'highligth'>confianza</span> desde 2014
+                        </h2>
+
+                        <p className = 'story-subtitle'>
+                            Más que una ferretería, somos tu socio en cada proyecto.
+                            Conoce el camino que nos ha llevado a ser la ferretería de
+                            confianza de miles de familias y profesionales.
+                        </p>
+                    </div>
+
+                    <div className = 'story-content'>
+                        {/* STORY CARDS */}
+                        <div className = 'story-cards'>
+                            <div className = 'story-card mission-card'>
+                                <div className = 'card-header'>
+                                    <div className = 'card-icon'>
+                                        <AiOutlineTeam />
+                                    </div>
+
+                                    <h3 className = 'card-title'>Nuestra Misión</h3>
+                                </div>
+
+                                <p className = 'card-description'>
+                                    Ser el aliado confiable que impulsa tus proyectos,
+                                    ofreciendo herramientas de calidad superior y
+                                    asesoramiento experto para que cada trabajo sea un éxito.
+                                </p>
+                            </div>
+
+                            <div className = 'story-card vision-card'>
+                                <div className = 'card-header'>
+                                    <div className = 'card-icon'>
+                                        <AiOutlineRocket />
+                                    </div>
+
+                                    <h3 className = 'card-title'>Nuestra Visión</h3>
+                                </div>
+
+                                <p className = 'card-description'>
+                                    Convertirnos en la ferretería líder de la región,
+                                    reconocida por transformar ideas en realidad a través de
+                                    productos excepcionales y servicio personalizado.
+                                </p>
+                            </div>
+                        </div>
+
+                        {/* TIMELINE */}
+                        <div className = 'timeline-section'>
+                            <h3 className = 'timeline-title'>Nuestro Camino</h3>
+
+                            <div className = 'timeline'>
+                                {storyMilestones.map((milestone, index) => (
+                                    <div key = {index} className = {`timeline-item $ {index % 2 === 0 ? 'left' : 'right'}`}>
+                                        <div className = 'timeline-content'>
+                                            <div className = 'timeline-year'>{milestone.year}</div>
+
+                                            <div className = 'timeline-icon-wrapper'>{milestone.icon}</div>
+
+                                            <div className = 'timeline-item-title'>{milestone.title}</div>
+
+                                            <div className = 'timeline-description'>{milestone.description}</div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             {/* VISION & MISSION SECTION */}
             <section className = 'vision-mission-section'>
                 <div className = 'container'>
                     <div className = 'vision-mission-content'>
-                        {/* VISION IMAGES - LEFT SIDE */}
-                        <div className = 'vision-images'>
-                            <div className = 'image-column'>
-                                <img
-                                    src = { Sierra }
-                                    alt = 'Ferreteria Abrinal - Nuestra Historia'
-                                    className = 'vision-img-main'
-                                />
-                            </div>
-
-                            <div className = 'image-column'>
-                                <img
-                                    src = { Rotomartillo }
-                                    alt = 'Tienda Ferreteria Abrinal'
-                                    className = 'vision-img-secondary'
-                                />
-
-                                <img
-                                    src = { Esmeriladora }
-                                    alt = 'Tienda Ferreteria Abrinal'
-                                    className = 'vision-img-secondary'
-                                />
-                            </div>
-                        </div>
-
                         {/* VISION TEXT - RIGHT SIDE */}
                         <div className = 'vision-text'>
                             <div className = 'vision-text-content'>
