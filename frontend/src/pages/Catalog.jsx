@@ -110,7 +110,7 @@ const Catalog = () => {
                 {/* PRODUCTS GRID */}
                 <div className = 'products-grid-v2'>
                     {filteredProducts.map((product) => (
-                        <div key = {product.id} className = 'product-car-v2'>
+                        <div key = {product.id} className = 'product-card-v2'>
 
                             <div className = 'product-image-v2'>
                                 <img src = {product.image} alt = {product.name} />
