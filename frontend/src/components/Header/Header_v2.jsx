@@ -15,10 +15,6 @@ const navLinks = [
         display: 'Catálogo',
     },
     {
-        path: '/catalog_v2',
-        display: 'Catálogo_v2',
-    },
-    {
         path: '/contact',
         display: 'Contacto',
     },

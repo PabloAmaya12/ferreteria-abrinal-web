@@ -1,95 +1,164 @@
 import { useState } from 'react';
-import { AiOutlineHeart, AiOutlineStar } from 'react-icons/ai';
+import { AiOutlineHeart } from 'react-icons/ai';
+
+import Austromex from '../assets/images/Austromex.webp';
+import Bosch from '../assets/images/Bosch.png';
+import Cinasa from '../assets/images/Cinasa.png';
+import Coflex from '../assets/images/Coflex.png';
+import DermaCare from '../assets/images/DermaCare.png';
+import Dewalt from '../assets/images/Dewalt.png';
+import Fandeli from '../assets/images/Fandeli.png'
+import Foset from '../assets/images/Foset.png'
+import IGESA from '../assets/images/IGESA.png'
+import IGoto from '../assets/images/IGoto.png'
+import Infra from '../assets/images/Infra.png'
+import Ingco from '../assets/images/Ingco.jpg';
+import IUSA from '../assets/images/IUSA.png';
+import Klintek from '../assets/images/Klintek.jpg'
+import Makita from '../assets/images/Makita.png';
+import Milwaukee from '../assets/images/Milwaukee.png';
+import Omega from '../assets/images/Omega.png';
+import PFERD from '../assets/images/PFERD.png';
+import Rotoplas from '../assets/images/Rotoplas.png'
+import Rugo from '../assets/images/Rugo.webp';
+import Truper from '../assets/images/Truper.png';
+import Urrea from '../assets/images/Urrea.webp';
+import Volteck from '../assets/images/Volteck.png';
 
 import './Catalog.css';
 
 const Catalog = () => {
-    const [activeFilter, setActiveFilter] = useState('All Brands');
+    const [activeFilter, setActiveFilter] = useState('All Categories');
 
-    const filters = ['All Brands', 'Electricidad', 'Plomería', 'Herramientas', 'Seguridad', 'Higiene'];
+    const filters = ['All Categories', 'Abrasivos', 'Electricidad', 'Herramientas', 'Higiene', 'Plomería', 'Seguridad', 'Soldadura'];
 
-    const products = [
+    const brands = [
         {
-            id: 1,
-            name: 'iGoto',
-            brand: 'Electricidad',
-            image: 'https://th.bing.com/th/id/R.939cb888a3ccb0b044001add257495db?rik=1trRcQSSEYhsiQ&riu=http%3a%2f%2fwww.logotypes101.com%2flogos%2f875%2f409B0FD2F6AB937C703A1360BBE3DDBC%2flogoigoto.png&ehk=QeAWVTcyi6InQDwcnVqUewvHdiPDHR2ztGLdG7grAUg%3d&risl=&pid=ImgRaw&r=0',
-            rating: 4.8,
+            name: 'Austromex',
+            category: 'Abrasivos',
+            image: Austromex,
         },
         {
-            id: 2,
-            name: 'Rotoplas',
-            brand: 'Plomería',
-            image: 'https://puntotrader.mx/blog/wp-content/uploads/2021/04/Portada-de-blog-2.jpg',
-            rating: 4.9,
+            name: 'Truper',
+            category: 'Herramientas',
+            image: Truper,
         },
         {
-            id: 3,
             name: 'Milwaukee',
-            brand: 'Herramientas',
-            image: 'https://i.pinimg.com/originals/26/27/03/2627035b20a397377410fc9c22694eaa.png',
-            rating: 4.7,
+            category: 'Herramientas',
+            image: Milwaukee,
         },
         {
-            id: 4,
-            name: 'Klintek',
-            brand: 'Higiene',
-            image: 'https://394a6c5045.clvaw-cdnwnd.com/dcd830adc60d471cef2d3fe763e1fea4/200000472-4bed74beda/KLINTEK.jpg?ph=394a6c5045',
-            rating: 4.6,
+            name: 'Dewalt',
+            category: 'Herramientas',
+            image: Dewalt,
         },
         {
-            id: 5,
-            name: 'IUSA',
-            brand: 'Electricidad',
-            image: 'https://th.bing.com/th/id/R.0650d7a4a0dff54ffd720448e00060fa?rik=7Bmvcsi73zxV6w&riu=http%3a%2f%2fprofesionalesengas.com%2fwp-content%2fuploads%2f2018%2f10%2flogo_iusa-2.png&ehk=RLyVvymDA5uBqNVu1aUrBn6gzy9N0Eta8%2fd6kOWTFok%3d&risl=&pid=ImgRaw&r=0',
-            rating: 4.8,
-        },
-        {
-            id: 6,
-            name: 'Foset',
-            brand: 'Plomería',
-            image: 'https://images-na.ssl-images-amazon.com/images/G/33/img18/hi_tools/Truper/Brandstore/foset._CB1198675309_.jpg',
-            rating: 4.7, 
-        },
-        {
-            id: 7,
             name: 'Makita',
-            brand: 'Herramientas',
-            image: 'https://http2.mlstatic.com/D_NQ_NP_947794-MLB49376840880_032022-O.jpg',
-            rating: 4.9,
+            category: 'Herramientas',
+            image: Makita,
         },
         {
-            id: 8,
+            name: 'URREA',
+            category: 'Herramientas',
+            image: Urrea,
+        },
+        {
+            name: 'PFERD',
+            category: 'Abrasivos',
+            image: PFERD,
+        },
+        {
+            name: 'IGoto',
+            category: 'Electricidad',
+            image: IGoto,
+        },
+        {
+            name: 'Coflex',
+            category: 'Plomería',
+            image: Coflex,
+        },
+        {
+            name: 'Volteck',
+            category: 'Electricidad',
+            image: Volteck,
+        },
+        {
+            name: 'Cinasa',
+            category: 'Abrasivos',
+            image: Cinasa,
+        },
+        {
+            name: 'Ingco',
+            category: 'Herramientas',
+            image: Ingco,
+        },
+        {
+            name: 'Omega',
+            category: 'Soldadura',
+            image: Omega,
+        },
+        {
+            name: 'Fandeli',
+            category: 'Abrasivos',
+            image: Fandeli,
+        },
+        {
+            name: 'Rotoplas',
+            category: 'Plomería',
+            image: Rotoplas,
+        },
+        {
+            name: 'Klintek',
+            category: 'Higiene',
+            image: Klintek,
+        },
+        {
+            name: 'IUSA',
+            category: 'Electricidad',
+            image: IUSA,
+        },
+        {
+            name: 'Infra',
+            category: 'Soldadura',
+            image: Infra,
+        },
+        {
+            name: 'IGESA',
+            category: 'Electricidad',
+            image: IGESA,
+        },
+        {
+            name: 'Foset',
+            category: 'Plomería',
+            image: Foset,
+        },
+        {
             name: 'DermaCare',
-            brand: 'Seguridad',
-            image: 'https://th.bing.com/th/id/R.57b340d368a6d3bc2a038bd38d2aca57?rik=PpxZgjU%2fWXjrzw&pid=ImgRaw&r=0',
-            rating: 4.8,
+            category: 'Seguridad',
+            image: DermaCare,
         },
         {
-            id: 9,
             name: 'Bosch',
-            brand: 'Herramientas',
-            image: 'https://logos-world.net/wp-content/uploads/2020/08/Bosch-Emblem.png',
-            rating: 4.8,
+            category: 'Herramientas',
+            image: Bosch,
         },
         {
-            id: 10,
-            name: 'Urrea',
-            brand: 'Herramientas',
-            image: 'https://th.bing.com/th/id/R.b1eaa9853801fa3adb7d84fc3b1acb31?rik=K0EQkkYHmk2Dgw&riu=http%3a%2f%2fwww.herramientasacz.com.mx%2fimage%2fcache%2fdata%2fURREA-600x315.jpg&ehk=4iGzRvf3nCHaza4CY0cukLirKdbb7RlGL3ISo1gyJwY%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1',
-            rating: 4.9,
+            name: 'Rugo',
+            category: 'Plomería',
+            image: Rugo,
         },
     ]
 
-    const filteredProducts = activeFilter === 'All Brands' ? products : products.filter((product) => product.brand === activeFilter);
+    const filteredBrands = activeFilter === 'All Categories' ? brands : brands.filter((brand) => brand.category === activeFilter);
 
     return (
-        <div className = 'catalog-v2-page'>
+        <div className = 'catalog-page'>
             <div className = 'container'>
                 <div className = 'catalog-header'>
                     <h1 className = 'catalog-title'>Catálogo de Marcas</h1>
 
-                    <p className = 'catalog-subtitle'>Descubre las mejores marcas y herramientas profesionales</p>
+                    <p className = 'catalog-subtitle'>Descubre las mejores marcas profesionales</p>
                 </div>
 
                 {/* FILTER BUTTONS */}
@@ -107,42 +176,18 @@ const Catalog = () => {
                     </div>
                 </div>
 
-                {/* PRODUCTS GRID */}
-                <div className = 'products-grid-v2'>
-                    {filteredProducts.map((product) => (
-                        <div key = {product.id} className = 'product-card-v2'>
-
-                            <div className = 'product-image-v2'>
-                                <img src = {product.image} alt = {product.name} />
+                {/* BRANDS GRID */}
+                <div className = 'brands-grid-v2'>
+                    {filteredBrands.map((brand, index) => (
+                        <div key = {index} className = 'brand-card-v2'>
+                            <div className = 'brand-image-v2'>
+                                <img src = {brand.image} alt = {brand.name} />
 
                                 <div className = 'product-overlay'>
                                     <button className = 'wishlist-btn'>
                                         <AiOutlineHeart />
                                     </button>
                                 </div>
-                            </div>
-
-                            <div className = 'product-info-v2'>
-                                <div className = 'product-brand'>{product.brand}</div>
-
-                                <div className = 'product-price-v2'>
-                                    <span className = 'current-price'>{product.name}</span>
-                                </div>
-
-                                <div className = 'prodcut-rating'>
-                                    <div className = 'stars'>
-                                        {[...Array(5)].map((_, i) => (
-                                            <AiOutlineStar
-                                                key = {i}
-                                                className = {i < Math.floor(product.rating) ? 'star-filled' : 'star-empty'}
-                                            />    
-                                        ))}
-                                    </div>
-
-                                    <span className = 'rating-text'>({product.rating})</span>
-                                </div>
-
-                                <button className = 'add-to-cart-btn'>Ver Catálogo</button>
                             </div>
                         </div>
                     ))}
