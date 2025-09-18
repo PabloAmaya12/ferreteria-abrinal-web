@@ -3,7 +3,8 @@
 :root {
     --primary-color: #0067ff;
     --yellow-color: #feb60d;
-    --purple-color: #9771ff;
+    /* --purple-color: #9771ff; */
+    --purple-color: #9900ff;
     --iris-color: #01b5c5;
     --heading-color: #181a1e;
     --text-color: #4e545f;
