@@ -98,7 +98,7 @@ const Header_v2 = () => {
                         {/* SEARCH BAR */}
                         <div className = {`search-section ${isSearchOpen ? 'active' : ""}`}>
                             <div className = 'search-bar'>
-                                <input type = 'text' placeholder = 'Buscar herramientas, marcas...' className = 'search-input' />
+                                <input type = 'text' placeholder = 'Buscar marcas...' className = 'search-input' />
 
                                 <button className = 'search-btn'>
                                     <BiSearch />

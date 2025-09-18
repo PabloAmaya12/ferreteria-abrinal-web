@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { AiOutlinePhone, AiOutlineMail, AiOutlineEnvironment, AiOutlineClockCircle, AiOutlineQuestionCircle, AiOutlineCalendar, AiFillFacebook, AiOutlineInstagram, AiFillLinkedin, AiOutlineShareAlt, AiOutlineWhatsApp } from 'react-icons/ai';
+import { AiOutlinePhone, AiOutlineMail, AiOutlineEnvironment, AiOutlineClockCircle, AiOutlineQuestionCircle, AiFillFacebook, AiOutlineInstagram, AiFillLinkedin, AiOutlineShareAlt, AiOutlineWhatsApp } from 'react-icons/ai';
 
 import './Contact.css';
 
@@ -18,8 +18,8 @@ const Contact = () => {
             icon: <AiOutlineMail className = 'method-icon' />,
             title: 'Email',
             description: 'Envíanos un correo',
-            info: 'ferreteriaabrinal@hotmail.com',
-            action: 'mailto:ferreteriaabrinal@hotmail.com',
+            info: 'ferreteria.abrinal@hotmail.com',
+            action: 'mailto:ferreteria.abrinal@hotmail.com',
         },
         {
             icon: <AiOutlineEnvironment className = 'method-icon' />,
@@ -59,7 +59,7 @@ const Contact = () => {
         {
             question: '¿Ofrecen garantía en sus productos?',
             answer:
-                'Sí, todos nuestro productos cuentan con garantía del fabricante y ofrecemos garantía extendida en productos seleccionados.',
+                'Sí, todos nuestros productos cuentan con garantía del fabricante y ofrecemos garantía extendida en productos seleccionados.',
         },
         {
             question: '¿Realizan entregas a domicilio?',
@@ -69,19 +69,19 @@ const Contact = () => {
         {
             question: '¿Aceptan devoluciones?',
             answer:
-                'Aceptamos devoluciones dentro de los primeros 3 días con el producto en perfecto estado y con su empaque original.',
+                'Aceptamos devoluciones dentro de los primeros 2 días con el producto en perfecto estado y con su empaque original.',
         },
     ];
 
     return (
         <div className = 'contact-page'>
             {/* HERO SECTION */}
-            <section className = 'contact-hero'>
+            <section className = 'cta-section'>
                 <div className = 'container'>
-                    <div className = 'hero-content'>
-                        <h1 className = 'hero-title'>Contáctanos</h1>
+                    <div className = 'cta-content'>
+                        <h1 className = 'cta-title'>Contáctanos</h1>
 
-                        <p className = 'hero-description'>
+                        <p className = 'cta-description'>
                             Estamos aquí para ayudarte. Ponte en contacto con nosotros y
                             resolveremos todas tus dudas.
                         </p>
@@ -161,7 +161,7 @@ const Contact = () => {
                                             </div>
                                     
                                             <div className = 'contact-item-body'>
-                                                <a href = 'mailto:ferreteriaabrinal@hotmail.com'>ferreteriaabrinal@hotmail.com</a>
+                                                <a href = 'mailto:ferreteriaabrinal@hotmail.com'>ferreteria.abrinal@hotmail.com</a>
                                             </div>
                                         </div>
                                     

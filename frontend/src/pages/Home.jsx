@@ -1,4 +1,4 @@
-import { AiOutlineEye, AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService, AiOutlineRocket, AiOutlineStar, AiOutlineTrophy, AiOutlineHeart, AiOutlineTeam } from 'react-icons/ai';
+import { AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService, AiOutlineRocket, AiOutlineStar, AiOutlineTrophy, AiOutlineHeart, AiOutlineBulb } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
 import Sierra from '../assets/images/Sierra.jpg';
@@ -169,23 +169,25 @@ const Home = () => {
                             <div className = 'story-card mission-card'>
                                 <div className = 'card-header'>
                                     <div className = 'card-icon'>
-                                        <AiOutlineTeam />
+                                        <AiOutlineAim />
                                     </div>
 
                                     <h3 className = 'card-title'>Nuestra Misión</h3>
                                 </div>
 
                                 <p className = 'card-description'>
-                                    Ser el aliado confiable que impulsa tus proyectos,
-                                    ofreciendo herramientas de calidad superior y
-                                    asesoramiento experto para que cada trabajo sea un éxito.
+                                    Ser el aliado confiable que impulsa los proyectos de
+                                    nuestros clientes, ofreciendo herramientas y productos de
+                                    la más alta calidad, junto con asesoramiento experto y
+                                    soluciones integrales que aseguren el éxito de cada trabajo y
+                                    contribuyan al desarrollo de nuestra comunidad.
                                 </p>
                             </div>
 
                             <div className = 'story-card vision-card'>
                                 <div className = 'card-header'>
                                     <div className = 'card-icon'>
-                                        <AiOutlineRocket />
+                                        <AiOutlineBulb />
                                     </div>
 
                                     <h3 className = 'card-title'>Nuestra Visión</h3>
@@ -194,7 +196,8 @@ const Home = () => {
                                 <p className = 'card-description'>
                                     Convertirnos en la ferretería líder de la región,
                                     reconocida por transformar ideas en realidad a través de
-                                    productos excepcionales y servicio personalizado.
+                                    productos de alta calidad, un servicio personalizado y un
+                                    firme compromiso con la innovación y el desarrollo sostenible.
                                 </p>
                             </div>
                         </div>
@@ -205,7 +208,7 @@ const Home = () => {
 
                             <div className = 'timeline'>
                                 {storyMilestones.map((milestone, index) => (
-                                    <div key = {index} className = {`timeline-item $ {index % 2 === 0 ? 'left' : 'right'}`}>
+                                    <div key = {index} className = {`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}>
                                         <div className = 'timeline-content'>
                                             <div className = 'timeline-year'>{milestone.year}</div>
 
@@ -217,66 +220,6 @@ const Home = () => {
                                         </div>
                                     </div>
                                 ))}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            {/* VISION & MISSION SECTION */}
-            <section className = 'vision-mission-section'>
-                <div className = 'container'>
-                    <div className = 'vision-mission-content'>
-                        {/* VISION TEXT - RIGHT SIDE */}
-                        <div className = 'vision-text'>
-                            <div className = 'vision-text-content'>
-                                <h2 className = 'vision-title'>
-                                    Nuestra <span className = 'highligth'>Visión y Misión</span>
-                                </h2>
-
-                                <div className = 'vision-divider'></div>
-                            </div>
-
-                            <div className = 'vision-item'>
-                                <div className = 'vision-icon-wrapper'>
-                                    <AiOutlineEye className = 'vision-icon' />
-                                </div>
-
-                                <div className = 'vision-content'>
-                                    <h3 className = 'vision-item-title'>Visión</h3>
-
-                                    <p className = 'vision-description'>
-                                        Ser la ferretería lider en la región, reconocida por la calidad de nuestros productos,
-                                        la excelencia en el servicio al cliente y nuestro compromiso con la innovación y el desarrollo sostenible.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className = 'vision-item'>
-                                <div className = 'vision-icon-wrapper'>
-                                    <AiOutlineAim className = 'vision-icon' />
-                                </div>
-
-                                <div className = 'vision-content'>
-                                    <h3 className = 'vision-item-title'>Misión</h3>
-
-                                    <p className = 'vision-description'>
-                                        Proporcionar a nuestros clientes las mejores herramientas y productos de ferretería,
-                                        ofreciendo asesoramiento experto y soluciones integrales para sus proyectos,
-                                        contribuyendo así al desarrollo de nuestra comunidad.
-                                    </p>
-                                </div>
-                            </div>
-
-                            <div className = 'vision-values'>
-                                <h3 className = 'values-title'>Nuestros Valores</h3>
-
-                                <ul className = 'values-list'>
-                                    <li className = 'value-item'>Calidad en cada producto</li>
-                                    <li className = 'value-item'>Integridad en nuestras acciones</li>
-                                    <li className = 'value-item'>Compromiso con el cliente</li>
-                                    <li className = 'value-item'>Innovación constante</li>
-                                </ul>
                             </div>
                         </div>
                     </div>
@@ -333,7 +276,9 @@ const Home = () => {
 
                         <p className = 'cta-description'>Encuentra las herramientas perfectas para llevar tus ideas a la realidad</p>
 
-                        <button className = 'btn-primary'>Ver Catálogo Completo</button>
+                        <NavLink to = '/catalog'>
+                            <button className = 'btn-primary'>Ver Catálogo Completo</button>
+                        </NavLink>
                     </div>
                 </div>
             </section>
