@@ -96,7 +96,7 @@ const Header_v2 = () => {
                         </div>
 
                         {/* SEARCH BAR */}
-                        <div className = {`search-section ${isSearchOpen ? 'active' : ""}`}>
+                        <div className = {`search-section $ {isSearchOpen ? 'active' : ""}`}>
                             <div className = 'search-bar'>
                                 <input type = 'text' placeholder = 'Buscar marcas...' className = 'search-input' />
 
@@ -107,7 +107,7 @@ const Header_v2 = () => {
                         </div>
 
                         {/* NAVIGATION */}
-                        <nav className = {`navigation-v2 ${isMenuOpen ? 'show-menu-v2' : ''}`}>
+                        <nav className = {`navigation-v2 $ {isMenuOpen ? 'show-menu-v2' : ''}`}>
                             <ul className = 'menu-v2'>
                                 {navLinks.map((link, index) => (
                                     <li key = {index}>

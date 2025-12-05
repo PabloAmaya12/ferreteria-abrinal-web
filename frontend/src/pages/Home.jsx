@@ -1,4 +1,4 @@
-import { AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService, AiOutlineRocket, AiOutlineStar, AiOutlineTrophy, AiOutlineHeart, AiOutlineBulb } from 'react-icons/ai';
+import { AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService, AiOutlineRocket, AiOutlineStar, AiOutlineSmile, AiOutlineTrophy, AiOutlineHeart, AiOutlineBulb } from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
 import Sierra from '../assets/images/Sierra.jpg';
@@ -19,17 +19,17 @@ const Home = () => {
         {
             icon: <AiOutlineTool className = 'feature-icon' />,
             title: 'Herramientas de Calidad',
-            description: 'Trabajamos con las mejores marcas del mercado para garantizar durabilidad y rendimiento.',
+            description: 'Trabajamos con las mejores marcas del mercado para garantizar durabilidad, confianza y alto rendimiento.',
         },
         {
             icon: <AiOutlineCustomerService className = 'feature-icon' />,
             title: 'Atención Personalizada',
-            description: 'Nuestro equipo de expertos te ayudará a encontrar la herramienta perfecta para tu proyecto.',
+            description: 'Nuestro equipo de expertos te asesora para que encuentres la herramienta ideal, ajustada a tus proyectos y necesidades.',
         },
         {
             icon: <AiOutlineCheckCircle className = 'feature-icon' />,
             title: 'Garantía Extendida',
-            description: 'Ofrecemos garantía extendida en todos nuestros productos para tu tranquilidad.',
+            description: 'Ofrecemos garantía extendida en productos seleccionados, brindándote seguridad y tranquilidad en cada elección.',
         },
     ]
 
@@ -46,26 +46,26 @@ const Home = () => {
         {
             year: '2014',
             title: 'Fundación',
-            description: 'Iniciamos con el sueño de ser la ferretería de confianza de la comunidad',
+            description: 'Nacimos con el propósito de ser la ferretería de confianza para nuestra comunidad, ofreciendo más que productos: soluciones para cada proyecto',
             icon: <AiOutlineRocket className = 'milestone-icon' />,
         },
         {
             year: '2018',
             title: 'Expansión',
-            description: 'Ampliamos nuestro catálogo con más de 50 marcas reconocidas',
+            description: 'Crecimos incorporando más de 50 marcas reconocidas, ampliando nuestro catálogo para cubrir todas las necesidades de profesionales y hogares',
             icon: <AiOutlineStar className = 'milestone-icon'/>,
         },
         {
             year: '2021',
             title: 'Reconocimiento',
-            description: 'Premiados como la mejor ferretería local por servicio al cliente',
+            description: 'Distinguidos como la mejor ferretería local gracias a nuestro compromiso con el servicio al cliente y la atención personilizada',
             icon: <AiOutlineTrophy className = 'milestone-icon' />,
         },
         {
             year: '2025',
             title: 'Presente',
-            description: 'Más de 10,000 clientes satisfechos y creciendo cada día',
-            icon: <AiOutlineTrophy className = 'milestone-icon' />
+            description: 'Hoy contamos con más de 10,000 clientes satisfechos, consolidándonos como un aliado confiable en cada proyecto',
+            icon: <AiOutlineSmile className = 'milestone-icon' />
         },
     ]
 
@@ -274,7 +274,7 @@ const Home = () => {
                     <div className = 'cta-content'>
                         <h2 className = 'cta-title'>¿Listo para tu próximo proyecto?</h2>
 
-                        <p className = 'cta-description'>Encuentra las herramientas perfectas para llevar tus ideas a la realidad</p>
+                        <p className = 'cta-description'>Da el siguiente paso con Ferretería Abrinal y encuentra las herramientas perfectas para transformar tus ideas en realidad</p>
 
                         <NavLink to = '/catalog'>
                             <button className = 'btn-primary'>Ver Catálogo Completo</button>

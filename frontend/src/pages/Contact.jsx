@@ -16,24 +16,31 @@ const Contact = () => {
         },
         {
             icon: <AiOutlineMail className = 'method-icon' />,
-            title: 'Email',
+            title: 'E-mail',
             description: 'Envíanos un correo',
-            info: 'ferreteria.abrinal@hotmail.com',
-            action: 'mailto:ferreteria.abrinal@hotmail.com',
+            info: 'ventas@ferreteria-abrinal.com',
+            action: 'mailto:ventas@ferreteria-abrinal.com',
         },
         {
             icon: <AiOutlineEnvironment className = 'method-icon' />,
-            title: 'Ubicación',
+            title: 'Dirección',
             description: 'Visítanos en tienda',
             info: 'Tamazula 522, José Campillo Sáinz, Gómez Palacio, Dgo. 35079',
             action: '#map',
-        },
-        {
+        }, /*
+        { 
             icon: <AiOutlineClockCircle className = 'method-icon' />,
             title: 'Horarios',
             description: 'Estamos abiertos',
-            info: 'Lunes - Viernes. 9 AM - 7 PM.',
+            info: 'Lunes - Viernes. 9 AM - 7 PM. Sábado. 9 AM - 4 PM.',
             action: null,
+        }, */
+        {
+            icon: <AiOutlineWhatsApp className = 'method-icon' />,
+            title: 'WhatsApp',
+            description: 'Envíanos un mensaje',
+            info: '+52 871 220 6353',
+            action: 'tel:+528712206353',
         },
     ];
 
@@ -161,7 +168,7 @@ const Contact = () => {
                                             </div>
                                     
                                             <div className = 'contact-item-body'>
-                                                <a href = 'mailto:ferreteriaabrinal@hotmail.com'>ferreteria.abrinal@hotmail.com</a>
+                                                <a href = 'mailto:ventas@ferreteria-abrinal.com'>ventas@ferreteria-abrinal.com</a>
                                             </div>
                                         </div>
                                     
@@ -187,7 +194,7 @@ const Contact = () => {
                                             <div className = 'contact-item-body'>
                                                 <p className = 'contact-text'>Lunes - Viernes. 9 AM - 7 PM.</p>
                                                 <p className = 'contact-text'>Sábado. 9 AM - 4 PM.</p>
-                                                <p className = 'contact-text'>Domingo. Cerrado.</p>
+                                                {/* <p className = 'contact-text'>Domingo. Cerrado.</p> */}
                                             </div>
                                         </div>
                                     
