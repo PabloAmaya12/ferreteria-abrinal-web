@@ -1,8 +1,6 @@
-import { useEffect, useRef} from 'react';
+import { useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { BiMenu } from 'react-icons/bi';
-
-import logo from '../../assets/images/logo.png'
 
 import './Header.css'
 
@@ -33,21 +31,18 @@ const Header = () => {
     const headerRef = useRef(null);
     const menuRef = useRef(null);
 
-    const handleStickyHeader = () => {
-        window.addEventListener('scroll', () => {
+    useEffect(() => {
+        const handleScroll = () => {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-                headerRef.current.classList.add('sticky__header');
+                headerRef.current?.classList.add('sticky__header');
             } else {
-                headerRef.current.classList.remove('sticky__header');
+                headerRef.current?.classList.remove('sticky__header');
             }
-        })
-    }
+        };
 
-    useEffect (() => {
-        handleStickyHeader();
-
-        return () => window.removeEventListener('scroll', handleStickyHeader);
-    })
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
     
     const toggleMenu = () => menuRef.current.classList.toggle('show__menu');
 

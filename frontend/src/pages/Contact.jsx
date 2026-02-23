@@ -1,84 +1,95 @@
 import { useState } from 'react';
-import { AiOutlinePhone, AiOutlineMail, AiOutlineEnvironment, AiOutlineClockCircle, AiOutlineQuestionCircle, AiFillFacebook, AiOutlineInstagram, AiFillLinkedin, AiOutlineShareAlt, AiOutlineWhatsApp } from 'react-icons/ai';
+import {
+    AiOutlinePhone,
+    AiOutlineMail,
+    AiOutlineEnvironment,
+    AiOutlineClockCircle,
+    AiOutlineQuestionCircle,
+    AiFillFacebook,
+    AiOutlineInstagram,
+    AiFillLinkedin,
+    AiOutlineShareAlt,
+    AiOutlineWhatsApp,
+} from 'react-icons/ai';
 
 import './Contact.css';
 
+const contactMethods = [
+    {
+        icon: <AiOutlinePhone className = 'method-icon' />,
+        title: 'Teléfono',
+        description: 'Llámanos directamente',
+        info: '+52 871 719 4848',
+        action: 'tel:+528717194848',
+    },
+    {
+        icon: <AiOutlineMail className = 'method-icon' />,
+        title: 'E-mail',
+        description: 'Envíanos un correo',
+        info: 'ventas@ferreteria-abrinal.com',
+        action: 'mailto:ventas@ferreteria-abrinal.com',
+    },
+    {
+        icon: <AiOutlineEnvironment className = 'method-icon' />,
+        title: 'Dirección',
+        description: 'Visítanos en tienda',
+        info: 'Tamazula 522, José Campillo Sáinz, Gómez Palacio, Dgo. 35079',
+        action: '#map',
+    }, /*
+    {
+        icon: <AiOutlineClockCircle className = 'method-icon' />,
+        title: 'Horarios',
+        description: 'Estamos abiertos',
+        info: 'Lunes - Viernes. 9 AM - 7 PM. Sábado. 9 AM - 4 PM.',
+        action: null,
+    }, */
+    {
+        icon: <AiOutlineWhatsApp className = 'method-icon' />,
+        title: 'WhatsApp',
+        description: 'Envíanos un mensaje',
+        info: '+52 871 220 6353',
+        action: 'tel:+528712206353',
+    },
+];
+
+const socialLinks = [
+    {
+        name: 'Facebook',
+        path: 'https://www.facebook.com/ferreteriaaldaba',
+        icon: <AiFillFacebook />,
+    },
+    {
+        name: 'Instagram',
+        path: 'https://www.instagram.com/abrinalferreteria/',
+        icon: <AiOutlineInstagram />,
+    },
+    {
+        name: 'LinkedIn',
+        path: 'https://www.linkedin.com/company/ferreteria-abrinal/',
+        icon: <AiFillLinkedin />,
+    },
+];
+
+const faqs = [
+    {
+        question: '¿Ofrecen garantía en sus productos?',
+        answer:
+            'Sí, todos nuestros productos cuentan con garantía del fabricante y ofrecemos garantía extendida en productos seleccionados.',
+    },
+    {
+        question: '¿Realizan entregas a domicilio?',
+        answer:
+            'Sí, realizamos entregas en toda la ciudad. El costo de envío varía según la distancia y el peso del pedido.',
+    },
+    {
+        question: '¿Aceptan devoluciones?',
+        answer:
+            'Aceptamos devoluciones dentro de los primeros 2 días con el producto en perfecto estado y con su empaque original.',
+    },
+];
+
 const Contact = () => {
     const [activeTab, setActiveTab] = useState('contact');
-
-    const contactMethods = [
-        {
-            icon: <AiOutlinePhone className = 'method-icon' />,
-            title: 'Teléfono',
-            description: 'Llámanos directamente',
-            info: '+52 871 719 4848',
-            action: 'tel:+528717194848',
-        },
-        {
-            icon: <AiOutlineMail className = 'method-icon' />,
-            title: 'E-mail',
-            description: 'Envíanos un correo',
-            info: 'ventas@ferreteria-abrinal.com',
-            action: 'mailto:ventas@ferreteria-abrinal.com',
-        },
-        {
-            icon: <AiOutlineEnvironment className = 'method-icon' />,
-            title: 'Dirección',
-            description: 'Visítanos en tienda',
-            info: 'Tamazula 522, José Campillo Sáinz, Gómez Palacio, Dgo. 35079',
-            action: '#map',
-        }, /*
-        { 
-            icon: <AiOutlineClockCircle className = 'method-icon' />,
-            title: 'Horarios',
-            description: 'Estamos abiertos',
-            info: 'Lunes - Viernes. 9 AM - 7 PM. Sábado. 9 AM - 4 PM.',
-            action: null,
-        }, */
-        {
-            icon: <AiOutlineWhatsApp className = 'method-icon' />,
-            title: 'WhatsApp',
-            description: 'Envíanos un mensaje',
-            info: '+52 871 220 6353',
-            action: 'tel:+528712206353',
-        },
-    ];
-
-    const socialLinks = [
-        {
-            name: 'Facebook',
-            path: 'https://www.facebook.com/ferreteriaaldaba',
-            icon: <AiFillFacebook />,
-        },
-        {
-            name: 'Instagram',
-            path: 'https://www.instagram.com/abrinalferreteria/',
-            icon: <AiOutlineInstagram />,
-        },
-        {
-            name: 'LinkedIn',
-            path: 'https://www.linkedin.com/company/ferreteria-abrinal/',
-            icon: <AiFillLinkedin />,
-        },
-    ];
-
-    const faqs = [
-        {
-            question: '¿Ofrecen garantía en sus productos?',
-            answer:
-                'Sí, todos nuestros productos cuentan con garantía del fabricante y ofrecemos garantía extendida en productos seleccionados.',
-        },
-        {
-            question: '¿Realizan entregas a domicilio?',
-            answer:
-                'Sí, realizamos entregas en toda la ciudad. El costo de envío varía según la distancia y el peso del pedido.',
-        },
-        {
-            question: '¿Aceptan devoluciones?',
-            answer:
-                'Aceptamos devoluciones dentro de los primeros 2 días con el producto en perfecto estado y con su empaque original.',
-        },
-    ];
 
     return (
         <div className = 'contact-page'>
@@ -127,7 +138,7 @@ const Contact = () => {
                         <div className = 'contact-form-section'>
                             <div className = 'section-tabs'>
                                 <button
-                                    className = {'tab-btn ${activeTab === "contact" ? "active" : ""}'}
+                                    className = {`tab-btn ${activeTab === 'contact' ? 'active' : ''}`}
                                     onClick = {() => setActiveTab('contact')}
                                 >
                                     <AiOutlinePhone />
@@ -135,7 +146,7 @@ const Contact = () => {
                                 </button>
 
                                 <button
-                                    className = {'tab-btn ${activeTab === "faq" ? "active" : ""}'}
+                                    className = {`tab-btn ${activeTab === 'faq' ? 'active' : ''}`}
                                     onClick = {() => setActiveTab('faq')}
                                 >
                                     <AiOutlineQuestionCircle />

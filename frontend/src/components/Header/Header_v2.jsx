@@ -26,31 +26,22 @@ const Header_v2 = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-    const handleStickyHeader = () => {
-        window.addEventListener('scroll', () => {
+    useEffect(() => {
+        const handleScroll = () => {
             if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
                 headerRef.current?.classList.add('sticky-header-v2');
             } else {
                 headerRef.current?.classList.remove('sticky-header-v2');
             }
-        });
-    };
-
-    useEffect(() => {
-        handleStickyHeader();
-
-        return () => {
-            window.removeEventListener('scroll', handleStickyHeader);
         };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
-    const toggleMenu = () => menuRef.current.classList.toggle('.show-menu-v2');
-
-    /*
     const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
+        setIsMenuOpen((open) => !open);
     };
-    */
 
     const toggleSearch = () => {
         setIsSearchOpen(!isSearchOpen);
@@ -96,7 +87,7 @@ const Header_v2 = () => {
                         </div>
 
                         {/* SEARCH BAR */}
-                        <div className = {`search-section $ {isSearchOpen ? 'active' : ""}`}>
+                        <div className = {`search-section ${isSearchOpen ? 'active' : ''}`}>
                             <div className = 'search-bar'>
                                 <input type = 'text' placeholder = 'Buscar marcas...' className = 'search-input' />
 
@@ -107,7 +98,7 @@ const Header_v2 = () => {
                         </div>
 
                         {/* NAVIGATION */}
-                        <nav className = {`navigation-v2 $ {isMenuOpen ? 'show-menu-v2' : ''}`}>
+                        <nav className = {`navigation-v2 ${isMenuOpen ? 'show-menu-v2' : ''}`}>
                             <ul className = 'menu-v2'>
                                 {navLinks.map((link, index) => (
                                     <li key = {index}>

@@ -1,7 +1,6 @@
 import { AiFillFacebook, AiOutlineInstagram, AiFillLinkedin } from "react-icons/ai";
 import { Link } from 'react-router-dom';
 
-import Kaisser from '../../assets/images/Kaisser.png';
 import Kaisser_v2 from '../../assets/images/Kaisser_v2.png';
 
 import './Footer.css';
@@ -118,7 +117,7 @@ const Footer = () => {
                         {/* FOOTER IMAGE */}
                         <div className = 'footer-column footer-image-column'>
                             <div className = 'footer-image'>
-                                <img src = {Kaisser_v2} className = 'footer-img' />
+                                <img src = {Kaisser_v2} className = 'footer-img' alt = 'Kaisser' loading = 'lazy' />
                             </div>
                         </div>
                     </div>

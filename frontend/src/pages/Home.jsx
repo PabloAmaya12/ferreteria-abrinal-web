@@ -1,4 +1,15 @@
-import { AiOutlineAim, AiOutlineCheckCircle, AiOutlineTool, AiOutlineCustomerService, AiOutlineRocket, AiOutlineStar, AiOutlineSmile, AiOutlineTrophy, AiOutlineHeart, AiOutlineBulb } from 'react-icons/ai';
+import {
+    AiOutlineAim,
+    AiOutlineCheckCircle,
+    AiOutlineTool,
+    AiOutlineCustomerService,
+    AiOutlineRocket,
+    AiOutlineStar,
+    AiOutlineSmile,
+    AiOutlineTrophy,
+    AiOutlineHeart,
+    AiOutlineBulb,
+} from 'react-icons/ai';
 import { NavLink } from 'react-router-dom';
 
 import Sierra from '../assets/images/Sierra.jpg';
@@ -14,60 +25,61 @@ import Urrea from '../assets/images/Urrea.webp';
 
 import './Home.css';
 
+const features = [
+    {
+        icon: <AiOutlineTool className = 'feature-icon' />,
+        title: 'Herramientas de Calidad',
+        description: 'Trabajamos con las mejores marcas del mercado para garantizar durabilidad, confianza y alto rendimiento.',
+    },
+    {
+        icon: <AiOutlineCustomerService className = 'feature-icon' />,
+        title: 'Atención Personalizada',
+        description: 'Nuestro equipo de expertos te asesora para que encuentres la herramienta ideal, ajustada a tus proyectos y necesidades.',
+    },
+    {
+        icon: <AiOutlineCheckCircle className = 'feature-icon' />,
+        title: 'Garantía Extendida',
+        description: 'Ofrecemos garantía extendida en productos seleccionados, brindándote seguridad y tranquilidad en cada elección.',
+    },
+];
+
+const topBrands = [
+    { name: 'Austromex', logo: Austromex },
+    { name: 'Truper', logo: Truper },
+    { name: 'Milwaukee', logo: Milwaukee },
+    { name: 'DeWalt', logo: Dewalt },
+    { name: 'Makita', logo: Makita },
+    { name: 'Urrea', logo: Urrea },
+];
+
+const storyMilestones = [
+    {
+        year: '2014',
+        title: 'Fundación',
+        description: 'Nacimos con el propósito de ser la ferretería de confianza para nuestra comunidad, ofreciendo más que productos: soluciones para cada proyecto',
+        icon: <AiOutlineRocket className = 'milestone-icon' />,
+    },
+    {
+        year: '2018',
+        title: 'Expansión',
+        description: 'Crecimos incorporando más de 50 marcas reconocidas, ampliando nuestro catálogo para cubrir todas las necesidades de profesionales y hogares',
+        icon: <AiOutlineStar className = 'milestone-icon'/>,
+    },
+    {
+        year: '2021',
+        title: 'Reconocimiento',
+        description: 'Distinguidos como la mejor ferretería local gracias a nuestro compromiso con el servicio al cliente y la atención personilizada',
+        icon: <AiOutlineTrophy className = 'milestone-icon' />,
+    },
+    {
+        year: '2025',
+        title: 'Presente',
+        description: 'Hoy contamos con más de 10,000 clientes satisfechos, consolidándonos como un aliado confiable en cada proyecto',
+        icon: <AiOutlineSmile className = 'milestone-icon' />
+    },
+];
+
 const Home = () => {
-    const features = [
-        {
-            icon: <AiOutlineTool className = 'feature-icon' />,
-            title: 'Herramientas de Calidad',
-            description: 'Trabajamos con las mejores marcas del mercado para garantizar durabilidad, confianza y alto rendimiento.',
-        },
-        {
-            icon: <AiOutlineCustomerService className = 'feature-icon' />,
-            title: 'Atención Personalizada',
-            description: 'Nuestro equipo de expertos te asesora para que encuentres la herramienta ideal, ajustada a tus proyectos y necesidades.',
-        },
-        {
-            icon: <AiOutlineCheckCircle className = 'feature-icon' />,
-            title: 'Garantía Extendida',
-            description: 'Ofrecemos garantía extendida en productos seleccionados, brindándote seguridad y tranquilidad en cada elección.',
-        },
-    ]
-
-    const topBrands = [
-        { name: 'Austromex', logo: Austromex },
-        { name: 'Truper', logo: Truper },
-        { name: 'Milwaukee', logo: Milwaukee },
-        { name: 'DeWalt', logo: Dewalt },
-        { name: 'Makita', logo: Makita },
-        { name: 'Urrea', logo: Urrea },
-    ]
-
-    const storyMilestones = [
-        {
-            year: '2014',
-            title: 'Fundación',
-            description: 'Nacimos con el propósito de ser la ferretería de confianza para nuestra comunidad, ofreciendo más que productos: soluciones para cada proyecto',
-            icon: <AiOutlineRocket className = 'milestone-icon' />,
-        },
-        {
-            year: '2018',
-            title: 'Expansión',
-            description: 'Crecimos incorporando más de 50 marcas reconocidas, ampliando nuestro catálogo para cubrir todas las necesidades de profesionales y hogares',
-            icon: <AiOutlineStar className = 'milestone-icon'/>,
-        },
-        {
-            year: '2021',
-            title: 'Reconocimiento',
-            description: 'Distinguidos como la mejor ferretería local gracias a nuestro compromiso con el servicio al cliente y la atención personilizada',
-            icon: <AiOutlineTrophy className = 'milestone-icon' />,
-        },
-        {
-            year: '2025',
-            title: 'Presente',
-            description: 'Hoy contamos con más de 10,000 clientes satisfechos, consolidándonos como un aliado confiable en cada proyecto',
-            icon: <AiOutlineSmile className = 'milestone-icon' />
-        },
-    ]
 
     return (
         <div className = 'home'>
@@ -130,12 +142,12 @@ const Home = () => {
                         {/* HERO IMAGES */}
                         <div className = 'hero-images'>
                             <div className = 'image-column'>
-                                <img src = { Sierra } className = 'hero-img main' />
+                                <img src = { Sierra } className = 'hero-img main' alt = 'Sierra' />
                             </div>
 
                             <div className = 'image-column'>
-                                <img src = { Rotomartillo } className = 'hero-img secondary' />
-                                <img src = { Esmeriladora } className = 'hero-img secondary' />
+                                <img src = { Rotomartillo } className = 'hero-img secondary' alt = 'Rotomartillo' loading = 'lazy' />
+                                <img src = { Esmeriladora } className = 'hero-img secondary' alt = 'Esmeriladora' loading = 'lazy' />
                             </div>
                         </div>
                     </div>
@@ -261,7 +273,7 @@ const Home = () => {
                     <div className = 'brands-grid'>
                          {topBrands.map((brand, index) => (
                             <div key = {index} className = 'brand-card'>
-                                <img src = {brand.logo} alt = {brand.name} />
+                                <img src = {brand.logo} alt = {brand.name} loading = 'lazy' />
                             </div>
                          ))}
                     </div>

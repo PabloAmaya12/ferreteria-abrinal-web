@@ -72,83 +72,100 @@ import WD40 from '../assets/images/WD40.png';
 
 import './Catalog.css';
 
+const filters = [
+    'All Categories',
+    'Abrasivos',
+    'Adhesivos',
+    'Automotriz',
+    'Carbones',
+    'Cerrajería',
+    'Cintas',
+    'Electricidad',
+    'Herramientas',
+    'Higiene',
+    'Lubricantes',
+    'Pilas',
+    'Pintura',
+    'Plomería',
+    'Seguridad',
+    'Selladores',
+    'Soldadura',
+    'Trefilados',
+];
+
+const brands = [
+    { name: 'Austromex', category: 'Abrasivos', image: Austromex, link: 'https://www.austromex.com.mx/' },
+    { name: 'Truper', category: 'Herramientas', image: Truper, link: 'https://www.truper.com/CatVigente/TRUPER-17.html' },
+    { name: 'Milwaukee', category: 'Herramientas', image: Milwaukee, link: 'https://www.milwaukeetool.com.mx/' },
+    { name: 'Dewalt', category: 'Herramientas', image: Dewalt, link: 'https://www.dewalts.com.mx/' },
+    { name: 'Makita', category: 'Herramientas', image: Makita, link: 'https://www.makita.com.mx/' },
+    { name: 'URREA', category: 'Herramientas', image: Urrea, link: 'https://www.urrea.com/' },
+    { name: 'PFERD', category: 'Abrasivos', image: PFERD, link: 'https://www.pferd.com/' },
+    { name: 'Tenazit', category: 'Abrasivos', image: Tenazit, link: 'https://www.austromex.com.mx/brands/tenazit/' },
+    { name: 'Stanley', category: 'Herramientas', image: Stanley, link: 'https://mx.stanleytools.global/' },
+    { name: 'Irwin', category: 'Herramientas', image: Irwin, link: 'https://www.irwin.com/' },
+    { name: 'Mikels', category: 'Herramientas', image: Mikels, link: 'https://www.mikels.com.mx/' },
+    { name: 'Bardahl', category: 'Automotriz', image: Bardahl, link: 'https://www.bardahl.com.mx/' },
+    { name: 'IGoto', category: 'Electricidad', image: IGoto, link: 'https://www.igoto.com.mx/' },
+    { name: 'Coflex', category: 'Plomería', image: Coflex, link: 'https://www.coflex.com.mx/' },
+    { name: 'Black & Decker', category: 'Herramientas', image: BlackDecker, link: 'https://www.blackanddecker.com.mx/' },
+    { name: 'ESPA', category: 'Plomería', image: ESPA, link: 'https://www.espa.com/' },
+    { name: 'Volteck', category: 'Electricidad', image: Volteck, link: 'https://www.truper.com/CatVigente/VOLTECK-389.html' },
+    { name: 'Cinasa', category: 'Abrasivos', image: Cinasa, link: 'https://www.cinasa.com.mx/' },
+    { name: 'Aqua Pak', category: 'Plomería', image: AquaPak },
+    { name: 'Ingco', category: 'Herramientas', image: Ingco, link: 'https://www.ingco.lat/' },
+    { name: 'Fiero', category: 'Trefilados', image: Fiero, link: 'https://www.truper.com/CatVigente/FIERO-548.html' },
+    { name: 'Easy Cut', category: 'Abrasivos', image: EasyCut, link: 'https://www.austromex.com.mx/group/1005/' },
+    { name: 'Dexter', category: 'Cerrajería', image: Dexter, link: 'https://www.cerraduras-dexter.com.mx/' },
+    { name: 'Energizer', category: 'Pilas', image: Energizer, link: 'https://www.energizer.com/' },
+    { name: 'Eveready', category: 'Pilas', image: Eveready, link: 'https://www.eveready.com/' },
+    { name: 'Panasonic', category: 'Pilas', image: Panasonic, link: 'https://www.panasonic.com/' },
+    { name: 'Duracell', category: 'Pilas', image: Duracell, link: 'https://www.duracell.com/' },
+    { name: 'Omega', category: 'Soldadura', image: Omega, link: 'https://www.omegaaleaciones.com/' },
+    { name: 'Fandeli', category: 'Abrasivos', image: Fandeli, link: 'https://www.fandeli.com/' },
+    { name: 'Loctite', category: 'Selladores', image: Loctite, link: 'https://www.loctite.com.mx/' },
+    { name: 'Rotoplas', category: 'Plomería', image: Rotoplas, link: 'https://www.rotoplas.com.mx/' },
+    { name: 'Klintek', category: 'Higiene', image: Klintek, link: 'https://www.truper.com/CatVigente/KLINTEK-601.html' },
+    { name: 'Bticino', category: 'Electricidad', image: Bticino, link: 'https://www.bticino.com.mx/' },
+    { name: 'Volteck Lait', category: 'Electricidad', image: VolteckLait, link: 'https://www.truper.com/CatVigente/VOLTECK-389.html' },
+    { name: 'IUSA', category: 'Electricidad', image: IUSA, link: 'https://www.iusa.com.mx/' },
+    { name: 'Infra', category: 'Soldadura', image: Infra, link: 'https://www.infra.com.mx/' },
+    { name: 'Doal', category: 'Pintura', image: Doal, link: 'https://www.pinturasdoal.com/' },
+    { name: 'Sista', category: 'Selladores', image: Sista, link: 'https://www.sista-selladores.com/' },
+    { name: 'Master', category: 'Cerrajería', image: Master, link: 'https://www.masterlock.com/' },
+    { name: 'IGESA', category: 'Electricidad', image: IGESA, link: 'https://www.igesa.com.mx/' },
+    { name: 'Foset', category: 'Plomería', image: Foset, link: 'https://www.truper.com/CatVigente/FOSET-467.html' },
+    { name: 'Austrodiam', category: 'Abrasivos', image: Austrodiam, link: 'https://www.austromex.com.mx/brands/austrodiam' },
+    { name: 'Dica', category: 'Plomería', image: Dica, link: 'https://www.dicalidad.com.mx/' },
+    { name: 'Phillips', category: 'Cerrajería', image: Phillips, link: 'https://www.phillips.com.mx/' },
+    { name: 'Evans', category: 'Plomería', image: Evans, link: 'https://www.evans.com.mx/' },
+    { name: 'Derma Care', category: 'Seguridad', image: DermaCare, link: 'https://www.dermacare.mx/' },
+    { name: 'WD-40', category: 'Lubricantes', image: WD40, link: 'https://www.wd40.com.mx/' },
+    { name: '3 en 1', category: 'Lubricantes', image: TresInOne, link: 'https://www.3enuno.lat/' },
+    { name: 'Ax Tech', category: 'Soldadura', image: AxTech, link: 'https://www.axtech.com.mx/' },
+    { name: 'Fleximatic', category: 'Plomería', image: Fleximatic, link: 'https://www.fleximatic.mx/' },
+    { name: 'Bosch', category: 'Herramientas', image: Bosch, link: 'https://www.bosch.com.mx/' },
+    { name: 'Ultra Color', category: 'Pintura', image: UltraColor, link: 'https://www.ultracolor.mx/' },
+    { name: 'Fanal', category: 'Cerrajería', image: Fanal, link: 'https://www.fanal.com.mx/' },
+    { name: 'Kola Loka', category: 'Adhesivos', image: KolaLoka, link: 'https://www.resistol.com.mx/' },
+    { name: 'Resistol 5000', category: 'Adhesivos', image: Resistol5000, link: 'https://www.resistol.com.mx/' },
+    { name: 'Pennsylvania', category: 'Selladores', image: Pennsylvania, link: 'https://www.pennsylvania.com.mx/' },
+    { name: 'Sika', category: 'Selladores', image: Sika, link: 'https://mex.sika.com/' },
+    { name: 'Rugo', category: 'Plomería', image: Rugo, link: 'https://www.rugo.com.mx/' },
+    { name: 'Devcon', category: 'Adhesivos', image: Devcon, link: 'https://www.devcon.com/' },
+    { name: 'ByLack', category: 'Seguridad', image: ByLack, link: 'https://www.bylack.com.mx/' },
+    { name: 'Permatex', category: 'Selladores', image: Permatex, link: 'https://www.permatex.com/' },
+    { name: '3M', category: 'Seguridad', image: TresM, link: 'https://www.3m.com.mx/' },
+    { name: 'Hermex', category: 'Cerrajería', image: Hermex, link: 'https://www.truper.com/CatVigente/HERMEX-576.html' },
+    { name: 'Cabel', category: 'Seguridad', image: Cabel, link: 'https://www.cabel.mx/' },
+    { name: 'Tuk', category: 'Cintas', image: Tuk, link: 'https://www.tuk.com.mx/' },
+    { name: 'Pretul', category: 'Herramientas', image: Pretul, link: 'https://www.truper.com/CatVigente/TRUPER-17.html' },
+    { name: 'Novapak', category: 'Cintas', image: Novapak, link: 'https://www.novapak.com.mx/' },
+    { name: 'Avante', category: 'Carbones', image: Avante, link: 'https://www.carbones-avante.com/' },
+];
+
 const Catalog = () => {
     const [activeFilter, setActiveFilter] = useState('All Categories');
-
-    const filters = ['All Categories', 'Abrasivos', 'Adhesivos', 'Automotriz', 'Carbones', 'Cerrajería',
-        'Cintas', 'Electricidad', 'Herramientas', 'Higiene', 'Lubricantes', 'Pilas', 'Pintura',
-        'Plomería', 'Seguridad', 'Selladores', 'Soldadura', 'Trefilados'];
-
-    const brands = [
-        { name: 'Austromex', category: 'Abrasivos', image: Austromex, link: 'https://www.austromex.com.mx/' },
-        { name: 'Truper', category: 'Herramientas', image: Truper, link: 'https://www.truper.com/CatVigente/TRUPER-17.html' },
-        { name: 'Milwaukee', category: 'Herramientas', image: Milwaukee, link: 'https://www.milwaukeetool.com.mx/' },
-        { name: 'Dewalt', category: 'Herramientas', image: Dewalt, link: 'https://www.dewalts.com.mx/' },
-        { name: 'Makita', category: 'Herramientas', image: Makita, link: 'https://www.makita.com.mx/' },
-        { name: 'URREA', category: 'Herramientas', image: Urrea, link: 'https://www.urrea.com/' },
-        { name: 'PFERD', category: 'Abrasivos', image: PFERD, link: 'https://www.pferd.com/' },
-        { name: 'Tenazit', category: 'Abrasivos', image: Tenazit, link: 'https://www.austromex.com.mx/brands/tenazit/' },
-        { name: 'Stanley', category: 'Herramientas', image: Stanley, link: 'https://mx.stanleytools.global/' },
-        { name: 'Irwin', category: 'Herramientas', image: Irwin, link: 'https://www.irwin.com/' },
-        { name: 'Mikels', category: 'Herramientas', image: Mikels, link: 'https://www.mikels.com.mx/' },
-        { name: 'Bardahl', category: 'Automotriz', image: Bardahl, link: 'https://www.bardahl.com.mx/' },
-        { name: 'IGoto', category: 'Electricidad', image: IGoto, link: 'https://www.igoto.com.mx/' },
-        { name: 'Coflex', category: 'Plomería', image: Coflex, link: 'https://www.coflex.com.mx/' },
-        { name: 'Black & Decker', category: 'Herramientas', image: BlackDecker, link: 'https://www.blackanddecker.com.mx/' },
-        { name: 'ESPA', category: 'Plomería', image: ESPA, link: 'https://www.espa.com/' },
-        { name: 'Volteck', category: 'Electricidad', image: Volteck, link: 'https://www.truper.com/CatVigente/VOLTECK-389.html' },
-        { name: 'Cinasa', category: 'Abrasivos', image: Cinasa, link: 'https://www.cinasa.com.mx/' },
-        { name: 'Aqua Pak', category: 'Plomería', image: AquaPak },
-        { name: 'Ingco', category: 'Herramientas', image: Ingco, link: 'https://www.ingco.lat/' },
-        { name: 'Fiero', category: 'Trefilados', image: Fiero, link: 'https://www.truper.com/CatVigente/FIERO-548.html' },
-        { name: 'Easy Cut', category: 'Abrasivos', image: EasyCut, link: 'https://www.austromex.com.mx/group/1005/' },
-        { name: 'Dexter', category: 'Cerrajería', image: Dexter, link: 'https://www.cerraduras-dexter.com.mx/' },
-        { name: 'Energizer', category: 'Pilas', image: Energizer, link: 'https://www.energizer.com/' },
-        { name: 'Eveready', category: 'Pilas', image: Eveready, link: 'https://www.eveready.com/' },
-        { name: 'Panasonic', category: 'Pilas', image: Panasonic, link: 'https://www.panasonic.com/' },
-        { name: 'Duracell', category: 'Pilas', image: Duracell, link: 'https://www.duracell.com/' },
-        { name: 'Omega', category: 'Soldadura', image: Omega, link: 'https://www.omegaaleaciones.com/' },
-        { name: 'Fandeli', category: 'Abrasivos', image: Fandeli, link: 'https://www.fandeli.com/' },
-        { name: 'Loctite', category: 'Selladores', image: Loctite, link: 'https://www.loctite.com.mx/' },
-        { name: 'Rotoplas', category: 'Plomería', image: Rotoplas, link: 'https://www.rotoplas.com.mx/' },
-        { name: 'Klintek', category: 'Higiene', image: Klintek, link: 'https://www.truper.com/CatVigente/KLINTEK-601.html' },
-        { name: 'Bticino', category: 'Electricidad', image: Bticino, link: 'https://www.bticino.com.mx/' },
-        { name: 'Volteck Lait', category: 'Electricidad', image: VolteckLait, link: 'https://www.truper.com/CatVigente/VOLTECK-389.html' },
-        { name: 'IUSA', category: 'Electricidad', image: IUSA, link: 'https://www.iusa.com.mx/' },
-        { name: 'Infra', category: 'Soldadura', image: Infra, link: 'https://www.infra.com.mx/' },
-        { name: 'Doal', category: 'Pintura', image: Doal, link: 'https://www.pinturasdoal.com/' },
-        { name: 'Sista', category: 'Selladores', image: Sista, link: 'https://www.sista-selladores.com/' },
-        { name: 'Master', category: 'Cerrajería', image: Master, link: 'https://www.masterlock.com/' },
-        { name: 'IGESA', category: 'Electricidad', image: IGESA, link: 'https://www.igesa.com.mx/' },
-        { name: 'Foset', category: 'Plomería', image: Foset, link: 'https://www.truper.com/CatVigente/FOSET-467.html' },
-        { name: 'Austrodiam', category: 'Abrasivos', image: Austrodiam, link: 'https://www.austromex.com.mx/brands/austrodiam' },
-        { name: 'Dica', category: 'Plomería', image: Dica, link: 'https://www.dicalidad.com.mx/' },
-        { name: 'Phillips', category: 'Cerrajería', image: Phillips, link: 'https://www.phillips.com.mx/' },
-        { name: 'Evans', category: 'Plomería', image: Evans, link: 'https://www.evans.com.mx/' },
-        { name: 'Derma Care', category: 'Seguridad', image: DermaCare, link: 'https://www.dermacare.mx/' },
-        { name: 'WD-40', category: 'Lubricantes', image: WD40, link: 'https://www.wd40.com.mx/' },
-        { name: '3 en 1', category: 'Lubricantes', image: TresInOne, link: 'https://www.3enuno.lat/' },
-        { name: 'Ax Tech', category: 'Soldadura', image: AxTech, link: 'https://www.axtech.com.mx/' },
-        { name: 'Fleximatic', category: 'Plomería', image: Fleximatic, link: 'https://www.fleximatic.mx/' },
-        { name: 'Bosch', category: 'Herramientas', image: Bosch, link: 'https://www.bosch.com.mx/' },
-        { name: 'Ultra Color', category: 'Pintura', image: UltraColor, link: 'https://www.ultracolor.mx/' },
-        { name: 'Fanal', category: 'Cerrajería', image: Fanal, link: 'https://www.fanal.com.mx/' },
-        { name: 'Kola Loka', category: 'Adhesivos', image: KolaLoka, link: 'https://www.resistol.com.mx/' },
-        { name: 'Resistol 5000', category: 'Adhesivos', image: Resistol5000, link: 'https://www.resistol.com.mx/' },
-        { name: 'Pennsylvania', category: 'Selladores', image: Pennsylvania, link: 'https://www.pennsylvania.com.mx/' },
-        { name: 'Sika', category: 'Selladores', image: Sika, link: 'https://mex.sika.com/' },
-        { name: 'Rugo', category: 'Plomería', image: Rugo, link: 'https://www.rugo.com.mx/' },
-        { name: 'Devcon', category: 'Adhesivos', image: Devcon, link: 'https://www.devcon.com/' },
-        { name: 'ByLack', category: 'Seguridad', image: ByLack, link: 'https://www.bylack.com.mx/' },
-        { name: 'Permatex', category: 'Selladores', image: Permatex, link: 'https://www.permatex.com/' },
-        { name: '3M', category: 'Seguridad', image: TresM, link: 'https://www.3m.com.mx/' },
-        { name: 'Hermex', category: 'Cerrajería', image: Hermex, link: 'https://www.truper.com/CatVigente/HERMEX-576.html' },
-        { name: 'Cabel', category: 'Seguridad', image: Cabel, link: 'https://www.cabel.mx/' },
-        { name: 'Tuk', category: 'Cintas', image: Tuk, link: 'https://www.tuk.com.mx/' },
-        { name: 'Pretul', category: 'Herramientas', image: Pretul, link: 'https://www.truper.com/CatVigente/TRUPER-17.html' },
-        { name: 'Novapak', category: 'Cintas', image: Novapak, link: 'https://www.novapak.com.mx/' },
-        { name: 'Avante', category: 'Carbones', image: Avante, link: 'https://www.carbones-avante.com/' },
-    ]
 
     const filteredBrands = activeFilter === 'All Categories' ? brands : brands.filter((brand) => brand.category === activeFilter);
 
@@ -167,7 +184,7 @@ const Catalog = () => {
                         {filters.map((filter) => (
                             <button
                                 key = {filter}
-                                className = {'filter-btn ${activeFilter === filter ? "active" : ""}'}
+                                className = {`filter-btn ${activeFilter === filter ? 'active' : ''}`}
                                 onClick = {() => setActiveFilter(filter)}
                             >
                                 {filter}
@@ -183,7 +200,7 @@ const Catalog = () => {
                             {brand.link ? (
                                 <a href = {brand.link} target = '_blank' rel = 'noopener noreferrer' className = 'brand-link'>
                                     <div className = 'brand-image-v2'>
-                                        <img src = {brand.image} alt = {brand.name} />
+                                        <img src = {brand.image} alt = {brand.name} loading = 'lazy' />
 
                                         <div className = 'product-overlay'>
                                             <button className = 'wishlist-btn'>
@@ -194,7 +211,7 @@ const Catalog = () => {
                                 </a>
                             ) : (
                                 <div className = 'brand-image-v2'>
-                                    <img src = {brand.image} alt = {brand.name} />
+                                    <img src = {brand.image} alt = {brand.name} loading = 'lazy' />
 
                                     <div className = 'product-overlay'>
                                         <button className = 'wishlist-btn'>

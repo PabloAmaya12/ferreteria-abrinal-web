@@ -1,0 +1,12 @@
+import mongoose from 'mongoose';
+import { env } from './env.js';
+
+export const connectDb = async () => {
+  if (!env.mongoUri) {
+    throw new Error('MONGO_URI is required');
+  }
+
+  mongoose.set('strictQuery', true);
+  await mongoose.connect(env.mongoUri);
+  console.log('MongoDB connected');
+};
