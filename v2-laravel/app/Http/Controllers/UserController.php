@@ -2,62 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreUserRequest;
+use App\Http\Requests\UpdateUserRequest;
+use App\Models\Role;
 use App\Models\User;
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 use Inertia\Inertia;
 
 class UserController extends Controller
 {
     public function index()
     {
-        $users = User::with('roles')
-            ->latest()
-            ->paginate(20);
-
         return Inertia::render('Admin/Users', [
-            'users' => $users,
+            'users' => User::with('roles')->latest()->paginate(20),
+            'roles' => Role::all(['id', 'name']),
         ]);
     }
 
-    public function store(Request $request)
+    public function store(StoreUserRequest $request)
     {
-        $validated = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6'],
-            'role' => ['nullable', 'string', 'exists:roles,name'],
-        ]);
-
         $user = User::create([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'password' => $validated['password'],
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => Hash::make($request->password),
         ]);
 
-        if (!empty($validated['role'])) {
-            $user->assignRole($validated['role']);
+        if ($request->filled('role')) {
+            $user->assignRole($request->role);
         }
 
         return back()->with('success', 'Usuario creado correctamente.');
     }
 
-    public function update(Request $request, User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
-        $validated = $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'email', 'max:255', 'unique:users,email,' . $user->id],
-            'password' => ['nullable', 'string', 'min:6'],
-            'role' => ['nullable', 'string', 'exists:roles,name'],
-        ]);
+        $data = [
+            'name' => $request->name,
+            'email' => $request->email,
+        ];
 
-        $user->update([
-            'name' => $validated['name'],
-            'email' => $validated['email'],
-            'password' => $validated['password'] ?? $user->password,
-        ]);
+        if ($request->filled('password')) {
+            $data['password'] = Hash::make($request->password);
+        }
 
-        if (isset($validated['role'])) {
-            $user->syncRoles([$validated['role']]);
+        $user->update($data);
+
+        if ($request->has('role')) {
+            $user->syncRoles([$request->role]);
         }
 
         return back()->with('success', 'Usuario actualizado correctamente.');

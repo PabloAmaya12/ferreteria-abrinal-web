@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string('link')->nullable();
             $table->boolean('active')->default(true);
             $table->unsignedInteger('sort_order')->default(0);
-            $table->timestamps();
 
             $table->index(['category_id', 'active']);
             $table->index('name');

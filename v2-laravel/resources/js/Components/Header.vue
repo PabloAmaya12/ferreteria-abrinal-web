@@ -108,9 +108,17 @@ const logout = () => {
                                     <div class="px-4 py-2 border-b border-bg-alt">
                                         <p class="text-xs text-text truncate">{{ auth.user.email }}</p>
                                     </div>
-                                    <Link v-if="auth.user.is_admin" href="/admin/usuarios" class="block px-4 py-2.5 text-sm text-text hover:bg-bg hover:text-primary transition-colors">
-                                        Panel Admin
-                                    </Link>
+                                    <template v-if="auth.user.is_admin">
+                                        <Link href="/admin/usuarios" class="block px-4 py-2.5 text-sm text-text hover:bg-bg hover:text-primary transition-colors" @click="isUserMenuOpen = false">
+                                            Usuarios
+                                        </Link>
+                                        <Link href="/admin/marcas" class="block px-4 py-2.5 text-sm text-text hover:bg-bg hover:text-primary transition-colors" @click="isUserMenuOpen = false">
+                                            Marcas
+                                        </Link>
+                                        <Link href="/admin/categorias" class="block px-4 py-2.5 text-sm text-text hover:bg-bg hover:text-primary transition-colors border-b border-bg-alt" @click="isUserMenuOpen = false">
+                                            Categorías
+                                        </Link>
+                                    </template>
                                     <button @click="logout" class="w-full text-left px-4 py-2.5 text-sm text-red-500 hover:bg-red-50 transition-colors">
                                         Cerrar Sesión
                                     </button>
@@ -187,9 +195,11 @@ const logout = () => {
                             <p class="text-xs text-text">{{ auth.user.email }}</p>
                         </div>
                     </div>
-                    <Link v-if="auth.user.is_admin" href="/admin/usuarios" class="block px-4 py-3 rounded-lg text-sm font-medium text-text hover:bg-bg hover:text-primary transition-all" @click="isUserMenuOpen = false">
-                        Panel Admin
-                    </Link>
+                    <template v-if="auth.user.is_admin">
+                        <Link href="/admin/usuarios" class="block px-4 py-3 rounded-lg text-sm font-medium text-text hover:bg-bg hover:text-primary transition-all" @click="isUserMenuOpen = false">Usuarios</Link>
+                        <Link href="/admin/marcas" class="block px-4 py-3 rounded-lg text-sm font-medium text-text hover:bg-bg hover:text-primary transition-all" @click="isUserMenuOpen = false">Marcas</Link>
+                        <Link href="/admin/categorias" class="block px-4 py-3 rounded-lg text-sm font-medium text-text hover:bg-bg hover:text-primary transition-all border-b border-bg-alt mb-1" @click="isUserMenuOpen = false">Categorías</Link>
+                    </template>
                     <button @click="logout" class="w-full text-left px-4 py-3 rounded-lg text-sm font-medium text-red-500 hover:bg-red-50 transition-all">
                         Cerrar Sesión
                     </button>

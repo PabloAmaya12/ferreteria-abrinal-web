@@ -32,7 +32,6 @@ const submit = () => {
             <div class="absolute inset-0 opacity-[0.04]" style="background-image: url('data:image/svg+xml,%3Csvg width=60 height=60 viewBox=%220 0 60 60%22 xmlns=%22http://www.w3.org/2000/svg%22%3E%3Cg fill=%22none%22 fill-rule=%22evenodd%22%3E%3Cg fill=%22%23ffffff%22 fill-opacity=%221%22%3E%3Cpath d=%22M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z%22/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');" />
 
             <div class="relative z-10 flex flex-col justify-between p-12 w-full">
-                <!-- TOP: Logo -->
                 <Link href="/" class="flex items-center gap-3 group">
                     <div class="w-14 h-14 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center text-3xl shadow-lg shadow-primary/30 transition-transform group-hover:scale-110">
                         🛠️
@@ -43,7 +42,6 @@ const submit = () => {
                     </div>
                 </Link>
 
-                <!-- CENTER: Mensaje -->
                 <div class="max-w-sm">
                     <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full text-sm text-white/80 font-medium mb-8">
                         <span class="w-2 h-2 bg-primary rounded-full animate-pulse" />
@@ -54,12 +52,10 @@ const submit = () => {
                         <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-iris">vuelta</span>
                     </h1>
                     <p class="text-white/70 text-lg leading-relaxed">
-                        Accede a tu cuenta para gestionar tus pedidos, ver catálogos exclusivos
-                        y mucho más.
+                        Accede a tu cuenta para gestionar tus pedidos, ver catálogos exclusivos y mucho más.
                     </p>
                 </div>
 
-                <!-- BOTTOM: Stats -->
                 <div class="flex gap-10">
                     <div>
                         <p class="text-3xl font-bold text-white">+80</p>
@@ -83,7 +79,6 @@ const submit = () => {
         <!-- RIGHT PANEL - FORM -->
         <div class="flex-1 flex items-center justify-center bg-bg px-6 py-12 lg:px-12">
             <div class="w-full max-w-md">
-                <!-- MOBILE LOGO -->
                 <div class="lg:hidden flex items-center gap-3 mb-10">
                     <Link href="/" class="flex items-center gap-3 group">
                         <div class="w-12 h-12 bg-gradient-to-br from-primary to-primary-dark rounded-xl flex items-center justify-center text-2xl transition-transform group-hover:scale-110">
@@ -99,6 +94,81 @@ const submit = () => {
                 <h2 class="text-3xl font-extrabold text-heading mb-2">Iniciar Sesión</h2>
                 <p class="text-text mb-8">Ingresa tus credenciales para acceder a tu cuenta</p>
 
+                <!-- FORM FIRST -->
+                <form @submit.prevent="submit" class="space-y-5">
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-heading mb-2">Correo electrónico</label>
+                        <div class="relative">
+                            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <input
+                                id="email" v-model="form.email" type="email" placeholder="tu@correo.com"
+                                class="w-full pl-12 pr-4 py-3.5 bg-white border-2 rounded-xl text-sm focus:outline-none transition-all duration-300"
+                                :class="form.errors.email ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-500/10' : 'border-bg-alt focus:border-primary focus:ring-4 focus:ring-primary/10'"
+                                required autofocus
+                            />
+                        </div>
+                        <p v-if="form.errors.email" class="mt-2 text-sm text-red-500 font-medium">{{ form.errors.email }}</p>
+                    </div>
+
+                    <div>
+                        <label for="password" class="block text-sm font-semibold text-heading mb-2">Contraseña</label>
+                        <div class="relative">
+                            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                            <input
+                                id="password" v-model="form.password" :type="showPassword ? 'text' : 'password'" placeholder="••••••••"
+                                class="w-full pl-12 pr-12 py-3.5 bg-white border-2 rounded-xl text-sm focus:outline-none transition-all duration-300"
+                                :class="form.errors.password ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-500/10' : 'border-bg-alt focus:border-primary focus:ring-4 focus:ring-primary/10'"
+                                required
+                            />
+                            <button type="button" @click="showPassword = !showPassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-text/40 hover:text-primary transition-colors">
+                                <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                                </svg>
+                                <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
+                                </svg>
+                            </button>
+                        </div>
+                        <p v-if="form.errors.password" class="mt-2 text-sm text-red-500 font-medium">{{ form.errors.password }}</p>
+                    </div>
+
+                    <div class="flex items-center">
+                        <label class="flex items-center gap-2 cursor-pointer group">
+                            <input v-model="form.remember" type="checkbox" class="w-4 h-4 rounded border-bg-alt text-primary focus:ring-primary/20 transition-colors" />
+                            <span class="text-sm text-text group-hover:text-heading transition-colors">Recordarme</span>
+                        </label>
+                    </div>
+
+                    <button
+                        type="submit" :disabled="form.processing"
+                        class="w-full bg-gradient-to-r from-primary to-primary-dark text-white py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
+                    >
+                        <span v-if="form.processing" class="flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
+                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                            </svg>
+                            Ingresando...
+                        </span>
+                        <span v-else>Iniciar Sesión</span>
+                    </button>
+                </form>
+
+                <!-- DIVIDER -->
+                <div class="relative my-8">
+                    <div class="absolute inset-0 flex items-center">
+                        <div class="w-full border-t border-bg-alt" />
+                    </div>
+                    <div class="relative flex justify-center">
+                        <span class="px-4 bg-bg text-sm text-text/60 font-medium">o continúa con</span>
+                    </div>
+                </div>
+
                 <!-- GOOGLE BUTTON -->
                 <a
                     href="/auth/google"
@@ -112,97 +182,6 @@ const submit = () => {
                     </svg>
                     <span class="group-hover:text-primary transition-colors">Continuar con Google</span>
                 </a>
-
-                <!-- DIVIDER -->
-                <div class="relative my-8">
-                    <div class="absolute inset-0 flex items-center">
-                        <div class="w-full border-t border-bg-alt" />
-                    </div>
-                    <div class="relative flex justify-center">
-                        <span class="px-4 bg-bg text-sm text-text/60 font-medium">o con tu correo</span>
-                    </div>
-                </div>
-
-                <!-- FORM -->
-                <form @submit.prevent="submit" class="space-y-5">
-                    <div>
-                        <label for="email" class="block text-sm font-semibold text-heading mb-2">Correo electrónico</label>
-                        <div class="relative">
-                            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                            </svg>
-                            <input
-                                id="email"
-                                v-model="form.email"
-                                type="email"
-                                placeholder="tu@correo.com"
-                                class="w-full pl-12 pr-4 py-3.5 bg-white border-2 rounded-xl text-sm focus:outline-none transition-all duration-300"
-                                :class="form.errors.email ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-500/10' : 'border-bg-alt focus:border-primary focus:ring-4 focus:ring-primary/10'"
-                                required
-                                autofocus
-                            />
-                        </div>
-                        <p v-if="form.errors.email" class="mt-2 text-sm text-red-500 font-medium">{{ form.errors.email }}</p>
-                    </div>
-
-                    <div>
-                        <label for="password" class="block text-sm font-semibold text-heading mb-2">Contraseña</label>
-                        <div class="relative">
-                            <svg class="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-text/40" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                            </svg>
-                            <input
-                                id="password"
-                                v-model="form.password"
-                                :type="showPassword ? 'text' : 'password'"
-                                placeholder="••••••••"
-                                class="w-full pl-12 pr-12 py-3.5 bg-white border-2 rounded-xl text-sm focus:outline-none transition-all duration-300"
-                                :class="form.errors.password ? 'border-red-300 focus:border-red-500 focus:ring-4 focus:ring-red-500/10' : 'border-bg-alt focus:border-primary focus:ring-4 focus:ring-primary/10'"
-                                required
-                            />
-                            <button
-                                type="button"
-                                @click="showPassword = !showPassword"
-                                class="absolute right-4 top-1/2 -translate-y-1/2 text-text/40 hover:text-primary transition-colors"
-                            >
-                                <svg v-if="!showPassword" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-                                </svg>
-                                <svg v-else class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21" />
-                                </svg>
-                            </button>
-                        </div>
-                        <p v-if="form.errors.password" class="mt-2 text-sm text-red-500 font-medium">{{ form.errors.password }}</p>
-                    </div>
-
-                    <div class="flex items-center justify-between">
-                        <label class="flex items-center gap-2 cursor-pointer group">
-                            <input
-                                v-model="form.remember"
-                                type="checkbox"
-                                class="w-4 h-4 rounded border-bg-alt text-primary focus:ring-primary/20 transition-colors"
-                            />
-                            <span class="text-sm text-text group-hover:text-heading transition-colors">Recordarme</span>
-                        </label>
-                    </div>
-
-                    <button
-                        type="submit"
-                        :disabled="form.processing"
-                        class="w-full bg-gradient-to-r from-primary to-primary-dark text-white py-3.5 rounded-xl font-semibold text-sm shadow-lg shadow-primary/25 hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
-                    >
-                        <span v-if="form.processing" class="flex items-center justify-center gap-2">
-                            <svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
-                                <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" />
-                                <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                            </svg>
-                            Ingresando...
-                        </span>
-                        <span v-else>Iniciar Sesión</span>
-                    </button>
-                </form>
 
                 <p class="text-center text-sm text-text mt-8">
                     ¿No tienes cuenta?

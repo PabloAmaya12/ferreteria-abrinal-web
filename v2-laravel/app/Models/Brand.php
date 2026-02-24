@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Brand extends Model
 {
+    public $timestamps = false;
+
     protected $fillable = [
         'name',
         'category_id',
@@ -42,7 +44,7 @@ class Brand extends Model
     public function scopeSearch($query, ?string $term)
     {
         if ($term) {
-            return $query->where('name', 'like', "%{$term}%");
+            return $query->whereRaw('LOWER(name) LIKE ?', ['%' . mb_strtolower($term) . '%']);
         }
         return $query;
     }

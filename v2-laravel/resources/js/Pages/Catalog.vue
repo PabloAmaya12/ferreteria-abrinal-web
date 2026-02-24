@@ -152,22 +152,56 @@ const hasLogo = (brand) => Boolean(brand?.image_url) && !logoErrors.value[brand.
                 </div>
 
                 <!-- PAGINATION -->
-                <div v-if="brands.last_page > 1" class="flex justify-center gap-2 mt-12">
+                <div v-if="brands.last_page > 1" class="flex justify-center items-center gap-2 mt-12">
+                    <!-- PREV -->
                     <Link
-                        v-for="link in brands.links"
-                        :key="link.label"
-                        :href="link.url || '#'"
+                        :href="brands.prev_page_url || '#'"
                         :class="[
-                            'w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all',
-                            link.active
-                                ? 'bg-primary text-white shadow-md shadow-primary/25'
-                                : link.url
-                                    ? 'bg-white text-text hover:bg-primary/10 hover:text-primary'
-                                    : 'bg-bg-alt text-text/30 cursor-not-allowed'
+                            'w-10 h-10 rounded-full flex items-center justify-center transition-all',
+                            brands.prev_page_url
+                                ? 'bg-white text-text hover:bg-primary/10 hover:text-primary'
+                                : 'bg-bg-alt text-text/20 cursor-not-allowed pointer-events-none'
                         ]"
-                        v-html="link.label"
                         preserve-scroll
-                    />
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </Link>
+
+                    <!-- PAGE NUMBERS -->
+                    <template v-for="(link, index) in brands.links" :key="`${link.label}-${index}`">
+                        <Link
+                            v-if="index > 0 && index < brands.links.length - 1"
+                            :href="link.url || '#'"
+                            :class="[
+                                'w-10 h-10 rounded-full flex items-center justify-center text-sm font-medium transition-all',
+                                link.active
+                                    ? 'bg-primary text-white shadow-md shadow-primary/25'
+                                    : link.url
+                                        ? 'bg-white text-text hover:bg-primary/10 hover:text-primary'
+                                        : 'bg-bg-alt text-text/30 cursor-not-allowed'
+                            ]"
+                            v-html="link.label"
+                            preserve-scroll
+                        />
+                    </template>
+
+                    <!-- NEXT -->
+                    <Link
+                        :href="brands.next_page_url || '#'"
+                        :class="[
+                            'w-10 h-10 rounded-full flex items-center justify-center transition-all',
+                            brands.next_page_url
+                                ? 'bg-white text-text hover:bg-primary/10 hover:text-primary'
+                                : 'bg-bg-alt text-text/20 cursor-not-allowed pointer-events-none'
+                        ]"
+                        preserve-scroll
+                    >
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </Link>
                 </div>
             </div>
         </section>

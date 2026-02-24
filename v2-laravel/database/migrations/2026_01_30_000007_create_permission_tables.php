@@ -27,7 +27,6 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('guard_name');
-            $table->timestamps();
             $table->unique(['name', 'guard_name']);
         });
 
@@ -35,7 +34,6 @@ return new class extends Migration
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('guard_name');
-            $table->timestamps();
             $table->unique(['name', 'guard_name']);
         });
 
