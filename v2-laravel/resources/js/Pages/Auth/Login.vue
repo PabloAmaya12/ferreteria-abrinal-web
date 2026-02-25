@@ -59,7 +59,7 @@ const submit = () => {
                 <div class="flex gap-10">
                     <div>
                         <p class="text-3xl font-bold text-white">+80</p>
-                        <div class="w-10 h-1 bg-primary rounded-full my-2" />
+                        <div class="w-10 h-1 bg-yellow rounded-full my-2" />
                         <p class="text-sm text-white/50">Marcas</p>
                     </div>
                     <div>

@@ -48,4 +48,9 @@ class Brand extends Model
         }
         return $query;
     }
+
+    public function products(): \Illuminate\Database\Eloquent\Relations\HasMany
+    {
+        return $this->hasMany(Product::class);
+    }
 }

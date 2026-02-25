@@ -5,7 +5,8 @@ const year = new Date().getFullYear();
 
 const quickLinks = [
     { name: 'Inicio', href: '/' },
-    { name: 'Catálogo', href: '/catalogo' },
+    { name: 'Marcas', href: '/marcas' },
+    { name: 'Productos', href: '/productos' },
     { name: 'Contacto', href: '/contacto' },
 ];
 

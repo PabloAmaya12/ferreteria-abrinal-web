@@ -142,18 +142,30 @@ const brandInitial = (name) => name.charAt(0).toUpperCase();
                     </div>
 
                     <!-- PAGINATION -->
-                    <div v-if="brands.last_page > 1" class="flex justify-center gap-2 py-6 border-t border-bg-alt">
+                    <div v-if="brands.last_page > 1" class="flex justify-center items-center gap-2 py-6 border-t border-bg-alt">
                         <Link
-                            v-for="link in brands.links"
-                            :key="link.label"
-                            :href="link.url || '#'"
-                            :class="[
-                                'w-9 h-9 rounded-lg flex items-center justify-center text-xs font-medium transition-all',
-                                link.active ? 'bg-primary text-white' : link.url ? 'bg-bg text-text hover:bg-primary/10' : 'bg-bg-alt text-text/30 cursor-not-allowed'
-                            ]"
-                            v-html="link.label"
+                            :href="brands.prev_page_url || '#'"
+                            :class="['w-9 h-9 rounded-lg flex items-center justify-center transition-all', brands.prev_page_url ? 'bg-bg text-text hover:bg-primary/10 hover:text-primary' : 'bg-bg-alt text-text/20 pointer-events-none']"
                             preserve-scroll
-                        />
+                        >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                        </Link>
+                        <template v-for="(link, i) in brands.links" :key="i">
+                            <Link
+                                v-if="i > 0 && i < brands.links.length - 1"
+                                :href="link.url || '#'"
+                                :class="['w-9 h-9 rounded-lg flex items-center justify-center text-xs font-medium transition-all', link.active ? 'bg-primary text-white' : link.url ? 'bg-bg text-text hover:bg-primary/10' : 'bg-bg-alt text-text/30 cursor-not-allowed']"
+                                v-html="link.label"
+                                preserve-scroll
+                            />
+                        </template>
+                        <Link
+                            :href="brands.next_page_url || '#'"
+                            :class="['w-9 h-9 rounded-lg flex items-center justify-center transition-all', brands.next_page_url ? 'bg-bg text-text hover:bg-primary/10 hover:text-primary' : 'bg-bg-alt text-text/20 pointer-events-none']"
+                            preserve-scroll
+                        >
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                        </Link>
                     </div>
                 </div>
             </div>

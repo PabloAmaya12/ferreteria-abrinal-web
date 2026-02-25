@@ -39,8 +39,8 @@ const contactDetails = [
     { label: 'Teléfono', value: '+52 871 719 4848', icon: 'M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z' },
     { label: 'E-mail', value: 'ventas@ferreteria-abrinal.com', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z', link: 'mailto:ventas@ferreteria-abrinal.com' },
     { label: 'Dirección', value: 'Tamazula 522, José Campillo Sáinz, Gómez Palacio, Dgo. 35079', icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z' },
-    { label: 'Horarios', value: 'Lunes - Viernes: 9 AM - 7 PM | Sábado: 9 AM - 4 PM', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
-    { label: 'WhatsApp', value: '+52 871 220 6353 / +52 871 521 5756', icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z' },
+    { label: 'Horarios', value: 'Lunes - Viernes: 9 AM - 7 PM \n Sábado: 9 AM - 4 PM', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+    { label: 'WhatsApp', value: '+52 871 220 6353 \n +52 871 521 5756', icon: 'M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z' },
 ];
 
 const socialLinks = [
@@ -161,7 +161,7 @@ const faqs = [
                                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" :d="detail.icon" />
                                             </svg>
                                         </div>
-                                        <div>
+                                        <div style="white-space: pre-line;">
                                             <h4 class="text-sm font-semibold text-heading mb-0.5">{{ detail.label }}</h4>
                                             <a v-if="detail.link" :href="detail.link" class="text-sm text-primary hover:underline">{{ detail.value }}</a>
                                             <p v-else class="text-sm text-text leading-relaxed">{{ detail.value }}</p>

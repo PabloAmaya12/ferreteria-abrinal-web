@@ -16,22 +16,26 @@ class HandleInertiaRequests extends Middleware
 
     public function share(Request $request): array
     {
+        $user = $request->user();
+
         return [
             ...parent::share($request),
             'appName' => config('app.name', 'Ferretería Abrinal'),
             'auth' => [
-                'user' => $request->user() ? [
-                    'id' => $request->user()->id,
-                    'name' => $request->user()->name,
-                    'email' => $request->user()->email,
-                    'avatar' => $request->user()->avatar,
-                    'is_admin' => $request->user()->hasRole('admin'),
+                'user' => $user ? [
+                    'id' => $user->id,
+                    'name' => $user->name,
+                    'email' => $user->email,
+                    'avatar' => $user->avatar,
+                    'is_admin' => $user->hasRole('admin'),
+                    'is_manager' => $user->hasAnyRole(['admin', 'manager']),
                 ] : null,
             ],
             'flash' => [
                 'success' => fn () => $request->session()->get('success'),
                 'error' => fn () => $request->session()->get('error'),
             ],
+            'cartCount' => $user ? $user->cartItems()->sum('quantity') : 0,
         ];
     }
 }

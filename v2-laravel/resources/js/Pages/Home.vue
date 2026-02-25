@@ -39,10 +39,10 @@ const features = [
 ];
 
 const milestones = [
-    { year: '2014', title: 'Fundación', description: 'Nacimos con el propósito de ser la ferretería de confianza para nuestra comunidad.', color: 'from-primary to-primary-dark' },
-    { year: '2018', title: 'Expansión', description: 'Crecimos incorporando más de 50 marcas reconocidas, ampliando nuestro catálogo.', color: 'from-purple to-primary' },
-    { year: '2021', title: 'Reconocimiento', description: 'Distinguidos como la mejor ferretería local por nuestro compromiso con el servicio.', color: 'from-iris to-purple' },
-    { year: '2025', title: 'Presente', description: 'Más de 10,000 clientes satisfechos, consolidándonos como un aliado confiable.', color: 'from-yellow to-primary' },
+    { year: '2014', title: 'Fundación', description: 'Nacimos con el propósito de ser la ferretería de confianza para nuestra comunidad.', color: 'from-primary to-purple' },
+    { year: '2018', title: 'Expansión', description: 'Crecimos incorporando más de 50 marcas reconocidas, ampliando nuestro catálogo.', color: 'from-purple to-iris' },
+    { year: '2021', title: 'Reconocimiento', description: 'Distinguidos como la mejor ferretería local por nuestro compromiso con el servicio.', color: 'from-iris to-yellow' },
+    { year: '2026', title: 'Presente', description: 'Más de 10,000 clientes satisfechos, consolidándonos como un aliado confiable.', color: 'from-yellow to-primary' },
 ];
 
 const stats = [
@@ -102,7 +102,7 @@ onMounted(() => {
                         </p>
 
                         <div class="flex flex-wrap gap-4 mb-12">
-                            <Link href="/catalogo" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-dark transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25">
+                            <Link href="/productos" class="inline-flex items-center gap-2 bg-primary text-white px-8 py-3.5 rounded-full font-semibold hover:bg-primary-dark transition-all hover:-translate-y-0.5 hover:shadow-lg hover:shadow-primary/25">
                                 Explorar Catálogo
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -145,11 +145,14 @@ onMounted(() => {
                                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                         />
                                         <div class="absolute inset-0 bg-gradient-to-t from-heading/45 via-heading/10 to-transparent opacity-90" />
+
+                                        <!--
                                         <div class="absolute bottom-3 left-3">
                                             <span class="inline-flex items-center rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-heading shadow-sm">
                                                 {{ tool.alt }}
                                             </span>
                                         </div>
+                                        -->
                                     </div>
                                 </div>
                                 <div class="mt-6 text-center">
@@ -287,7 +290,7 @@ onMounted(() => {
                 </div>
 
                 <div class="text-center mt-10">
-                    <Link href="/catalogo" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
+                    <Link href="/marcas" class="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all">
                         Ver todas las marcas
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -309,7 +312,7 @@ onMounted(() => {
                     Da el siguiente paso con Ferretería Abrinal y encuentra las herramientas perfectas
                     para transformar tus ideas en realidad.
                 </p>
-                <Link href="/catalogo" class="inline-flex items-center gap-2 bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all">
+                <Link href="/marcas" class="inline-flex items-center gap-2 bg-white text-primary px-10 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:-translate-y-1 transition-all">
                     Ver Catálogo Completo
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />

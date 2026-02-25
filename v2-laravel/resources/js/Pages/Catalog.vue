@@ -16,7 +16,7 @@ const logoErrors = ref({});
 
 const filterByCategory = (slug) => {
     activeCategory.value = slug;
-    router.get('/catalogo', {
+    router.get('/marcas', {
         category: slug === 'all' ? undefined : slug,
         q: searchQuery.value || undefined,
     }, { preserveState: true, preserveScroll: true });
@@ -25,7 +25,7 @@ const filterByCategory = (slug) => {
 watch(searchQuery, (val) => {
     clearTimeout(searchTimeout);
     searchTimeout = setTimeout(() => {
-        router.get('/catalogo', {
+        router.get('/marcas', {
             category: activeCategory.value === 'all' ? undefined : activeCategory.value,
             q: val || undefined,
         }, { preserveState: true, preserveScroll: true });

@@ -7,7 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class CatalogController extends Controller
+class BrandCatalogController extends Controller
 {
     public function __invoke(Request $request)
     {
